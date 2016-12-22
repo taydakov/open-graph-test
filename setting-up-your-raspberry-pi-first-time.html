@@ -1,0 +1,2310 @@
+
+<!DOCTYPE html>
+
+
+
+<!--[if lte IE 9]><html lang="en" class="no-js old-ie"><![endif]-->
+<!--[if gt IE 9><!-->
+<html lang="en" class="no-js">
+<!--<![endif]-->
+
+<head>
+    <!-- META Fields -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+            <script type="text/javascript">
+                
+                window.dataLayer = window.dataLayer || [];
+                dataLayer.push({"page":{"pageInfo":{"title":"Raspberry Pi Quick Start Guide | Arrow.com"}}});
+            </script>
+
+
+<title>Raspberry Pi Quick Start Guide | Arrow.com</title>
+
+            <meta name="description" content="So you have your hands on one of the most powerful single-board computers ever -- now what? " />
+            <meta name="robots" content="NOODP" />
+
+    
+
+
+            <meta property="og:title" content="Raspberry Pi Quick Start Guide | Arrow.com" />
+            <meta property="og:type" content="website" />
+            <meta property="og:description" content="So you have your hands on one of the most powerful single-board computers ever -- now what? " />
+            <meta property="og:image" content="https://static4.arrow.com/-/media/images/products/raspberry-pi-3-main.jpg?mw=639&amp;hash=F7A0E9D3B6041AA8E05F3A236585E45DA571E060" />
+            <meta property="og:image:width" content="500" />
+            <meta property="og:image:height" content="500" />
+            <meta property="og:url" content="https://www.arrow.com/en/research-and-events/articles/setting-up-your-raspberry-pi-first-time" />
+            <meta property="og:site_name" content="Arrow.com" />
+            <meta property="fb:admins" content="1789682" />
+            <meta property="twitter:title" content="Raspberry Pi Quick Start Guide | Arrow.com" />
+            <meta property="twitter:description" content="So you have your hands on one of the most powerful single-board computers ever -- now what? " />
+            <meta property="twitter:image" content="https://static4.arrow.com/-/media/images/products/raspberry-pi-3-main.jpg?mw=639&amp;hash=F7A0E9D3B6041AA8E05F3A236585E45DA571E060" />
+            <meta property="twitter:card" content="summary_large_image" />
+            <meta property="twitter:site" content="@Arrow_dot_com" />
+
+    
+
+
+
+    <link rel="canonical" href="https://www.arrow.com/en/research-and-events/articles/setting-up-your-raspberry-pi-first-time"/>
+
+    
+
+
+  <link rel="alternate" hreflang="en" href="https://www.arrow.com/en/research-and-events/articles/setting-up-your-raspberry-pi-first-time" />
+  <link rel="alternate" hreflang="x-default" href="https://www.arrow.com/en/research-and-events/articles/setting-up-your-raspberry-pi-first-time" />
+
+
+
+
+<script>
+(function(){
+  if (window.BOOMR && window.BOOMR.version) { return; }
+  var dom,doc,where,iframe = document.createElement("iframe"),win = window;
+
+  function boomerangSaveLoadTime(e) {
+    win.BOOMR_onload=(e && e.timeStamp) || new Date().getTime();
+  }
+  if (win.addEventListener) {
+    win.addEventListener("load", boomerangSaveLoadTime, false);
+  } else if (win.attachEvent) {
+    win.attachEvent("onload", boomerangSaveLoadTime);
+  }
+
+  iframe.src = "javascript:void(0)";
+  iframe.title = ""; iframe.role = "presentation";
+  (iframe.frameElement || iframe).style.cssText = "width:0;height:0;border:0;display:none;";
+  where = document.getElementsByTagName("script")[0];
+  where.parentNode.insertBefore(iframe, where);
+
+  try {
+    doc = iframe.contentWindow.document;
+  } catch(e) {
+    dom = document.domain;
+    iframe.src="javascript:var d=document.open();d.domain='"+dom+"';void(0);";
+    doc = iframe.contentWindow.document;
+  }
+  doc.open()._l = function() {
+    var js = this.createElement("script");
+    if (dom) { this.domain = dom; }
+    js.id = "boomr-if-as";
+    js.src = "//c.go-mpulse.net/boomerang/" +
+    "D8VFQ-UGF7T-B96TK-F6KWQ-BEZZU";
+    BOOMR_lstart=new Date().getTime();
+    this.body.appendChild(js);
+  };
+  doc.write("<");
+  doc.write("body onload='document._l();'>");
+  doc.close();
+})();
+</script>    <!-- Favicons / Home Screen Icons -->
+    <link rel="shortcut icon" href="https://static4.arrow.com/static/img/icons/favicon___qzjlsjmewafj9h9ogyzvg2_ord.ico" />
+    <link rel="icon" type="image/png" href="https://static4.arrow.com/static/img/icons/favicon-16x16___cuuljjxqzwtshkn13ae3vq2_ord.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="https://static4.arrow.com/static/img/icons/favicon-32x32___rcjjxwz5nk9c9dqkcwnlw2_ord.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="https://static4.arrow.com/static/img/icons/favicon-96x96___kb68d-ek-wwzsuyid7wta2_ord.png" sizes="96x96">
+    <link rel="apple-touch-icon" sizes="57x57" href="https://static4.arrow.com/static/img/icons/apple-touch-icon-57x57___jmyt2bcxqoyyrqjzndmbng2_ord.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="https://static4.arrow.com/static/img/icons/apple-touch-icon-60x60___yu3mlvqzn5ify8rnlcfivg2_ord.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="https://static4.arrow.com/static/img/icons/apple-touch-icon-72x72___lylgmvribb2sd8ehhmwoiw2_ord.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="https://static4.arrow.com/static/img/icons/apple-touch-icon-76x76___hlnpy7el7zw5hflkuxtr9a2_ord.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="https://static4.arrow.com/static/img/icons/apple-touch-icon-114x114___evcmf-nkxu8ghregsive9a2_ord.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="https://static4.arrow.com/static/img/icons/apple-touch-icon-120x120___beilfknq8c5ytcyzpz8la2_ord.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="https://static4.arrow.com/static/img/icons/apple-touch-icon-144x144___ppaszpjh9ajd61ygg4valg2_ord.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="https://static4.arrow.com/static/img/icons/apple-touch-icon-152x152___es2wuyqdqncqtfpzkx67ew2_ord.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://static4.arrow.com/static/img/icons/apple-touch-icon-180x180___bfg1vyxb9o5gtpssqtiwyq2_ord.png">
+    <link rel="manifest" href="https://static4.arrow.com/static/img/icons/manifest___g2vv1wywkrbqv-wi04hcg2_ord.json">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-TileImage" content="https://static4.arrow.com/static/img/icons/mstile-144x144___iq1qv67m8rgugmyniom5w2_ord.png">
+    <meta name="theme-color" content="#000000">
+    <meta http-equiv='x-dns-prefetch-control' content='on'>
+    <link rel="dns-prefetch" href="//static4.arrow.com">
+    <link rel="dns-prefetch" href="//static5.arrow.com">
+    <link rel="dns-prefetch" href="//static6.arrow.com">
+
+    <!--[if gt IE 9]><!-->
+    <link rel="stylesheet" href="/static/css/arrow___ketql80nheulw49wbh6npw2_ord.css">
+    
+
+
+
+    <!--<![endif]-->
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" href="/static/css/old-ie___m3jmrpeq0g6xhlxacjwlq2_ord.css">
+    <![endif]-->
+    <!--[if gt IE 9]><!-->
+
+
+
+<script src="https://cdn.optimizely.com/js/5276250506.js"></script>
+    <script type="text/javascript">!function(a,b,c){function d(a,b){return typeof a===b}function e(){var a,b,c,e,f,g,h;for(var i in s)if(s.hasOwnProperty(i)){if(a=[],b=s[i],b.name&&(a.push(b.name.toLowerCase()),b.options&&b.options.aliases&&b.options.aliases.length))for(c=0;c<b.options.aliases.length;c++)a.push(b.options.aliases[c].toLowerCase());for(e=d(b.fn,"function")?b.fn():b.fn,f=0;f<a.length;f++)g=a[f],h=g.split("."),1===h.length?u[h[0]]=e:(!u[h[0]]||u[h[0]]instanceof Boolean||(u[h[0]]=new Boolean(u[h[0]])),u[h[0]][h[1]]=e),v.push((e?"":"no-")+h.join("-"))}}function f(a){var b=w.className,c=u._config.classPrefix||"";if(x&&(b=b.baseVal),u._config.enableJSClass){var d=new RegExp("(^|\\s)"+c+"no-js(\\s|$)");b=b.replace(d,"$1"+c+"js$2")}u._config.enableClasses&&(b+=" "+c+a.join(" "+c),x?w.className.baseVal=b:w.className=b)}function g(a,b){return!!~(""+a).indexOf(b)}function h(){return"function"!=typeof b.createElement?b.createElement(arguments[0]):x?b.createElementNS.call(b,"http://www.w3.org/2000/svg",arguments[0]):b.createElement.apply(b,arguments)}function i(){var a=b.body;return a||(a=h(x?"svg":"body"),a.fake=!0),a}function j(a,c,d,e){var f,g,j,k,l="modernizr",m=h("div"),n=i();if(parseInt(d,10))for(;d--;)j=h("div"),j.id=e?e[d]:l+(d+1),m.appendChild(j);return f=h("style"),f.type="text/css",f.id="s"+l,(n.fake?n:m).appendChild(f),n.appendChild(m),f.styleSheet?f.styleSheet.cssText=a:f.appendChild(b.createTextNode(a)),m.id=l,n.fake&&(n.style.background="",n.style.overflow="hidden",k=w.style.overflow,w.style.overflow="hidden",w.appendChild(n)),g=c(m,a),n.fake?(n.parentNode.removeChild(n),w.style.overflow=k,w.offsetHeight):m.parentNode.removeChild(m),!!g}function k(a){return a.replace(/([A-Z])/g,function(a,b){return"-"+b.toLowerCase()}).replace(/^ms-/,"-ms-")}function l(b,d){var e=b.length;if("CSS"in a&&"supports"in a.CSS){for(;e--;)if(a.CSS.supports(k(b[e]),d))return!0;return!1}if("CSSSupportsRule"in a){for(var f=[];e--;)f.push("("+k(b[e])+":"+d+")");return f=f.join(" or "),j("@supports ("+f+") { #modernizr { position: absolute; } }",function(a){return"absolute"==getComputedStyle(a,null).position})}return c}function m(a){return a.replace(/([a-z])-([a-z])/g,function(a,b,c){return b+c.toUpperCase()}).replace(/^-/,"")}function n(a,b,e,f){function i(){k&&(delete B.style,delete B.modElem)}if(f=!d(f,"undefined")&&f,!d(e,"undefined")){var j=l(a,e);if(!d(j,"undefined"))return j}for(var k,n,o,p,q,r=["modernizr","tspan"];!B.style;)k=!0,B.modElem=h(r.shift()),B.style=B.modElem.style;for(o=a.length,n=0;o>n;n++)if(p=a[n],q=B.style[p],g(p,"-")&&(p=m(p)),B.style[p]!==c){if(f||d(e,"undefined"))return i(),"pfx"!=b||p;try{B.style[p]=e}catch(a){}if(B.style[p]!=q)return i(),"pfx"!=b||p}return i(),!1}function o(a,b){return function(){return a.apply(b,arguments)}}function p(a,b,c){var e;for(var f in a)if(a[f]in b)return c===!1?a[f]:(e=b[a[f]],d(e,"function")?o(e,c||b):e);return!1}function q(a,b,c,e,f){var g=a.charAt(0).toUpperCase()+a.slice(1),h=(a+" "+z.join(g+" ")+g).split(" ");return d(b,"string")||d(b,"undefined")?n(h,b,e,f):(h=(a+" "+C.join(g+" ")+g).split(" "),p(h,b,c))}function r(a,b,d){return q(a,c,c,b,d)}var s=[],t={_version:"3.3.1",_config:{classPrefix:"",enableClasses:!0,enableJSClass:!0,usePrefixes:!0},_q:[],on:function(a,b){var c=this;setTimeout(function(){b(c[a])},0)},addTest:function(a,b,c){s.push({name:a,fn:b,options:c})},addAsyncTest:function(a){s.push({name:null,fn:a})}},u=function(){};u.prototype=t,u=new u;var v=[],w=b.documentElement,x="svg"===w.nodeName.toLowerCase(),y="Moz O ms Webkit",z=t._config.usePrefixes?y.split(" "):[];t._cssomPrefixes=z;var A={elem:h("modernizr")};u._q.push(function(){delete A.elem});var B={style:A.elem.style};u._q.unshift(function(){delete B.style});var C=t._config.usePrefixes?y.toLowerCase().split(" "):[];t._domPrefixes=C,t.testAllProps=q;var D=function(b){var d,e=prefixes.length,f=a.CSSRule;if("undefined"==typeof f)return c;if(!b)return!1;if(b=b.replace(/^@/,""),d=b.replace(/-/g,"_").toUpperCase()+"_RULE",d in f)return"@"+b;for(var g=0;e>g;g++){var h=prefixes[g],i=h.toUpperCase()+"_"+d;if(i in f)return"@-"+h.toLowerCase()+"-"+b}return!1};t.atRule=D;var E=(t.prefixed=function(a,b,c){return 0===a.indexOf("@")?D(a):(-1!=a.indexOf("-")&&(a=m(a)),b?q(a,b,c):q(a,"pfx"))},t.testStyles=j);u.addTest("hiddenscroll",function(){return E("#modernizr {width:100px;height:100px;overflow:scroll}",function(a){return a.offsetWidth===a.clientWidth})}),u.addTest("json","JSON"in a&&"parse"in JSON&&"stringify"in JSON),t.testAllProps=r,u.addTest("flexbox",r("flexBasis","1px",!0)),u.addTest("placeholder","placeholder"in h("input")&&"placeholder"in h("textarea")),u.addTest("hidden","hidden"in h("a")),u.addTest("cssanimations",r("animationName","a",!0)),u.addTest("history",function(){var b=navigator.userAgent;return(-1===b.indexOf("Android 2.")&&-1===b.indexOf("Android 4.0")||-1===b.indexOf("Mobile Safari")||-1!==b.indexOf("Chrome")||-1!==b.indexOf("Windows Phone"))&&(a.history&&"pushState"in a.history)}),u.addTest("template","content"in h("template")),u.addTest("fetch","fetch"in a);var F=function(){function a(a,b){var e;return!!a&&(b&&"string"!=typeof b||(b=h(b||"div")),a="on"+a,e=a in b,!e&&d&&(b.setAttribute||(b=h("div")),b.setAttribute(a,""),e="function"==typeof b[a],b[a]!==c&&(b[a]=c),b.removeAttribute(a)),e)}var d=!("onblur"in b.documentElement);return a}();t.hasEvent=F,u.addTest("inputsearchevent",F("search")),u.addTest("target",function(){var b=a.document;if(!("querySelectorAll"in b))return!1;try{return b.querySelectorAll(":target"),!0}catch(a){return!1}}),u.addTest("cookies",function(){try{b.cookie="cookietest=1";var a=-1!=b.cookie.indexOf("cookietest=");return b.cookie="cookietest=1; expires=Thu, 01-Jan-1970 00:00:01 GMT",a}catch(a){return!1}}),u.addTest("localstorage",function(){var a="modernizr";try{return localStorage.setItem(a,a),localStorage.removeItem(a),!0}catch(a){return!1}}),u.addTest("sessionstorage",function(){var a="modernizr";try{return sessionStorage.setItem(a,a),sessionStorage.removeItem(a),!0}catch(a){return!1}}),e(),f(v),delete t.addTest,delete t.addAsyncTest;for(var G=0;G<u._q.length;G++)u._q[G]();a.Modernizr=u}(window,document),window.matchMedia||(window.matchMedia=function(){"use strict";var a=window.styleMedia||window.media;if(!a){var b=document.createElement("style"),c=document.getElementsByTagName("script")[0],d=null;b.type="text/css",b.id="matchmediajs-test",c.parentNode.insertBefore(b,c),d="getComputedStyle"in window&&window.getComputedStyle(b,null)||b.currentStyle,a={matchMedium:function(a){var c="@media "+a+"{ #matchmediajs-test { width: 1px; } }";return b.styleSheet?b.styleSheet.cssText=c:b.textContent=c,"1px"===d.width}}}return function(b){return{matches:a.matchMedium(b||"all"),media:b||"all"}}}()),function(a,b,c){"use strict";function d(a){var b,c,d,e,g,h=a||{};b=h.elements||f.getAllElements();for(var i=0,j=b.length;j>i;i++)if(c=b[i],d=c.parentNode,e=void 0,g=void 0,"IMG"===c.nodeName.toUpperCase()&&(c[f.ns]||(c[f.ns]={}),h.reevaluate||!c[f.ns].evaluated)){if("PICTURE"===d.nodeName.toUpperCase()){if(f.removeVideoShim(d),e=f.getMatch(c,d),e===!1)continue}else e=void 0;("PICTURE"===d.nodeName.toUpperCase()||c.srcset&&!f.srcsetSupported||!f.sizesSupported&&c.srcset&&c.srcset.indexOf("w")>-1)&&f.dodgeSrcset(c),e?(g=f.processSourceSet(e),f.applyBestCandidate(g,c)):(g=f.processSourceSet(c),(void 0===c.srcset||c[f.ns].srcset)&&f.applyBestCandidate(g,c)),c[f.ns].evaluated=!0}}function e(){function c(){var b;a._picturefillWorking||(a._picturefillWorking=!0,a.clearTimeout(b),b=a.setTimeout(function(){d({reevaluate:!0}),a._picturefillWorking=!1},60))}d();var e=setInterval(function(){return d(),/^loaded|^i|^c/.test(b.readyState)?void clearInterval(e):void 0},250);a.addEventListener?a.addEventListener("resize",c,!1):a.attachEvent&&a.attachEvent("onresize",c)}if(a.HTMLPictureElement)return void(a.picturefill=function(){});b.createElement("picture");var f={};f.ns="picturefill",function(){f.srcsetSupported="srcset"in c,f.sizesSupported="sizes"in c}(),f.trim=function(a){return a.trim?a.trim():a.replace(/^\s+|\s+$/g,"")},f.endsWith=function(a,b){return a.endsWith?a.endsWith(b):-1!==a.indexOf(b,a.length-b.length)},f.restrictsMixedContent=function(){return"https:"===a.location.protocol},f.matchesMedia=function(b){return a.matchMedia&&a.matchMedia(b).matches},f.getDpr=function(){return a.devicePixelRatio||1},f.getWidthFromLength=function(a){a=a&&a.indexOf("%")>-1==0&&(parseFloat(a)>0||a.indexOf("calc(")>-1)?a:"100vw",a=a.replace("vw","%"),f.lengthEl||(f.lengthEl=b.createElement("div"),f.lengthEl.style.cssText="border:0;display:block;font-size:1em;left:0;margin:0;padding:0;position:absolute;visibility:hidden"),f.lengthEl.style.width=a,b.body.appendChild(f.lengthEl),f.lengthEl.className="helper-from-picturefill-js",f.lengthEl.offsetWidth<=0&&(f.lengthEl.style.width=b.documentElement.offsetWidth+"px");var c=f.lengthEl.offsetWidth;return b.body.removeChild(f.lengthEl),c},f.types={},f.types["image/jpeg"]=!0,f.types["image/gif"]=!0,f.types["image/png"]=!0,f.types["image/svg+xml"]=b.implementation.hasFeature("http://www.w3.org/TR/SVG11/feature#Image","1.1"),f.types["image/webp"]=function(){var a="image/webp";c.onerror=function(){f.types[a]=!1,d()},c.onload=function(){f.types[a]=1===c.width,d()},c.src="data:image/webp;base64,UklGRh4AAABXRUJQVlA4TBEAAAAvAAAAAAfQ//73v/+BiOh/AAA="},f.verifyTypeSupport=function(a){var b=a.getAttribute("type");return null===b||""===b||("function"==typeof f.types[b]?(f.types[b](),"pending"):f.types[b])},f.parseSize=function(a){var b=/(\([^)]+\))?\s*(.+)/g.exec(a);return{media:b&&b[1],length:b&&b[2]}},f.findWidthFromSourceSize=function(a){for(var b,c=f.trim(a).split(/\s*,\s*/),d=0,e=c.length;e>d;d++){var g=c[d],h=f.parseSize(g),i=h.length,j=h.media;if(i&&(!j||f.matchesMedia(j))){b=i;break}}return f.getWidthFromLength(b)},f.parseSrcset=function(a){for(var b=[];""!==a;){a=a.replace(/^\s+/g,"");var c,d=a.search(/\s/g),e=null;if(-1!==d){c=a.slice(0,d);var f=c.slice(-1);if((","===f||""===c)&&(c=c.replace(/,+$/,""),e=""),a=a.slice(d+1),null===e){var g=a.indexOf(",");-1!==g?(e=a.slice(0,g),a=a.slice(g+1)):(e=a,a="")}}else c=a,a="";(c||e)&&b.push({url:c,descriptor:e})}return b},f.parseDescriptor=function(a,b){var c,d=b||"100vw",e=a&&a.replace(/(^\s+|\s+$)/g,""),g=f.findWidthFromSourceSize(d);if(e)for(var h=e.split(" "),i=h.length-1;i>=0;i--){var j=h[i],k=j&&j.slice(j.length-1);if("h"!==k&&"w"!==k||f.sizesSupported){if("x"===k){var l=j&&parseFloat(j,10);c=l&&!isNaN(l)?l:1}}else c=parseFloat(parseInt(j,10)/g)}return c||1},f.getCandidatesFromSourceSet=function(a,b){for(var c=f.parseSrcset(a),d=[],e=0,g=c.length;g>e;e++){var h=c[e];d.push({url:h.url,resolution:f.parseDescriptor(h.descriptor,b)})}return d},f.dodgeSrcset=function(a){a.srcset&&(a[f.ns].srcset=a.srcset,a.removeAttribute("srcset"))},f.processSourceSet=function(a){var b=a.getAttribute("srcset"),c=a.getAttribute("sizes"),d=[];return"IMG"===a.nodeName.toUpperCase()&&a[f.ns]&&a[f.ns].srcset&&(b=a[f.ns].srcset),b&&(d=f.getCandidatesFromSourceSet(b,c)),d},f.applyBestCandidate=function(a,b){var c,d,e;a.sort(f.ascendingSort),d=a.length,e=a[d-1];for(var g=0;d>g;g++)if(c=a[g],c.resolution>=f.getDpr()){e=c;break}if(e&&!f.endsWith(b.src,e.url))if(f.restrictsMixedContent()&&"http:"===e.url.substr(0,"http:".length).toLowerCase())void 0!==typeof console&&void 0;else{b.src=e.url,b.currentSrc=b.src;var h=b.style||{},i="webkitBackfaceVisibility"in h,j=h.zoom;i&&(h.zoom=".999",i=b.offsetWidth,h.zoom=j)}},f.ascendingSort=function(a,b){return a.resolution-b.resolution},f.removeVideoShim=function(a){var b=a.getElementsByTagName("video");if(b.length){for(var c=b[0],d=c.getElementsByTagName("source");d.length;)a.insertBefore(d[0],c);c.parentNode.removeChild(c)}},f.getAllElements=function(){for(var a=[],c=b.getElementsByTagName("img"),d=0,e=c.length;e>d;d++){var g=c[d];("PICTURE"===g.parentNode.nodeName.toUpperCase()||null!==g.getAttribute("srcset")||g[f.ns]&&null!==g[f.ns].srcset)&&a.push(g)}return a},f.getMatch=function(a,b){for(var c,d=b.childNodes,e=0,g=d.length;g>e;e++){var h=d[e];if(1===h.nodeType){if(h===a)return c;if("SOURCE"===h.nodeName.toUpperCase()){null!==h.getAttribute("src")&&void 0!==typeof console&&void 0;var i=h.getAttribute("media");if(h.getAttribute("srcset")&&(!i||f.matchesMedia(i))){var j=f.verifyTypeSupport(h);if(j===!0){c=h;break}if("pending"===j)return!1}}}}return c},e(),d._=f,"object"==typeof module&&"object"==typeof module.exports?module.exports=d:"function"==typeof define&&define.amd?define(function(){return d}):"object"==typeof a&&(a.picturefill=d)}(window,window.document,new window.Image);
+//# sourceMappingURL=head.js.map</script>
+
+
+
+<!--<![endif]-->
+    
+
+
+
+
+</head>
+
+<body class="no-feat-PdpOnlineQuote no-feat-PdpStickyBuyBar no-feat-SingleBuyingOption no-feat-ProductSearchShowTotalResultCount no-feat-RegistrationAdvancedForm no-feat-RestrictProductModuleByIP no-feat-NewProductsMegaMenu no-feat-DisableAssetsCdn no-feat-ManufacturerPageV2 feat-ProductSearchNativeFilters feat-UseOrCadDesigner feat-MyArrowUserCookie feat-EnableOrderDetailLink feat-SouthernEuropeRegion feat-QuarantineCart feat-FreightForwarder feat-LoginPageSplash feat-NewProductLinePage">
+
+
+
+<!-- Google Tag Manager -->
+<!-- Google Tag Manager Custom Code -->
+<!--[if gt IE 8]><!-->
+    <noscript>
+        <iframe src="//www.googletagmanager.com/ns.html?id=GTM-N2LBBV"
+                height="0" width="0"
+                style="display: none; visibility: hidden">
+        </iframe>
+    </noscript>
+    <script type="text/javascript" language="javascript">
+        (function(w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({
+                'gtm.start':
+                    new Date().getTime(),
+                event: "gtm.js"
+            });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s),
+                dl = l != "dataLayer" ? "&l=" + l : "";
+            j.async = true;
+            j.src =
+                "//www.googletagmanager.com/gtm.js?id=" + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, "script", "dataLayer", "GTM-N2LBBV");
+// this is the Production version
+    </script>
+
+<!--<![endif]-->
+
+<!-- Loading script asynchronously -->
+<script type="text/javascript">
+(function(a,b,c,d)
+{ a='//tags.tiqcdn.com/utag/arrow/main/prod/utag.js'; b=document;c='script';d=b.createElement(c);d.src=a;d.type='text/java'+c;d.async=true; a=b.getElementsByTagName(c)[0];a.parentNode.insertBefore(d,a); }
+)();
+document.addEventListener('DOMContentLoaded', function() {jQuery('div.HeaderDd-regions .linkList-item a').click(function(e) {e.preventDefault();var url = "http://components.arrow.com/part/search/1?region=" + this.getAttribute('data-value');
+window.location = url;})
+});
+</script>     <!--[if gte IE 8]><!-->
+    <!--<![endif]-->
+    <!--[if lte IE 9]>
+        
+
+
+
+<div id="old-ie" class="OldIe">
+    <div class="OldIe-header"><div class="OldIe-arrowLogo Content"></div></div>
+        <div class="OldIe-content Content">
+        <h2>We're sorry but your browser is not supported</h2>
+            <div class="OldIe-contactDetails">
+                <p class="OldIe-contactIntro">
+                To ensure the best online experience possible, please upgrade your browser or contact us.
+                </p>
+                <p class="OldIe-contactItem"><span class="Icon Icon--phone"></span>Tel:1-855-326-4757</p>
+                <p class="OldIe-contactItem">
+                    <span class="Icon Icon--email"></span>
+                    Email: <a href="mailto:websupport@arrow.com">websupport@arrow.com</a>
+                </p>
+            </div>
+    </div>
+</div>
+    <![endif]-->
+    <div class="Main">
+        <div class="Overlay Overlay--megamenu"></div>
+        <div id="overlay-headerDropdown" class="Overlay Overlay--headerDropdown"></div>
+        <div class="Overlay Overlay--searchFilterOpen"></div>
+        <div class="Overlay Overlay--searchLoading"><span><span></span></span></div>
+
+        <div class="Overlay Overlay--imageOverlay"></div>
+        <div class="Overlay ImageOverlay">
+            <div class="ImageOverlay-wrapper">
+                <button class="ImageOverlay-close Icon Icon--cross"></button>
+            </div>
+        </div>
+
+        
+            <script type="text/javascript">
+                
+                window.dataLayer = window.dataLayer || [];
+                dataLayer.push({"user":{"profile":{"userId":"-1","userType":null,"userGeo":"US"}}});
+            </script>
+            <script type="text/javascript">
+                
+                window.dataLayer = window.dataLayer || [];
+                dataLayer.push({"page":{"pageInfo":{"referringUrl":null,"language":"en-US","apiRegion":"NAC","sitecoreItemId":"ffa10fc2-e8f6-42f7-9ce6-62c354e36719"}}});
+            </script>
+            <script type="text/javascript">
+                
+                window.dataLayer = window.dataLayer || [];
+                dataLayer.push({"env":{"buildVersion":"2016120811215","sysEnv":"PROD","dataCentre":"ORD","framework":"ContentDelivery"}});
+            </script>
+            <script type="text/javascript">
+                
+                window.dataLayer = window.dataLayer || [];
+                dataLayer.push({"page":{"selectedCurrency":"USD"}});
+            </script>
+
+
+<header class="head" data-gtm-tag="">
+    
+
+
+<div class="AdBanner is-blue">
+    <a href="/en/campaigns/holiday-gift-guide" target="_self"
+        data-gtm-event="Click" data-gtm-action="Click" data-gtm-category="Promotion" data-gtm-label="/en/campaigns/holiday-gift-guide" >
+<div class="AdBanner-image" style="background-image: url('https://static4.arrow.com/-/media/images/promos/1016/new-green-background/blue-snow-header.jpg?mw=1239&hash=796F7BB889B3E401A5CDE40ECC3A56EA3296AA9B')">
+            <h2>Shop Our Holiday Gift Guide + Free shipping US Ground (All orders) and International  (orders $50+)</h2>
+</div>
+    </a>
+    <div class="AdBanner-closeWrapper">
+        <button class="AdBanner-close Icon Icon--cross Icon--circle" data-toggle-show-hide="AdBanner"></button>
+    </div>
+</div>
+
+    
+
+
+<div class="DivisionsMenu">
+    <div class="DivisionsMenu-wrap">
+
+        <div class="Content">
+
+            <ul class="DivisionsMenu-items u-cf">
+
+                <li class="DivisionsMenu-cell DivisionsMenu-cell--main">
+                    <div class="DivisionsMenu-cell-wrap">
+                        <aside class="DivisionsMenu-cell-subsection">
+                          <span class="DivisionsMenu-cell-title">Arrow</span>
+                          <span class="DivisionsMenu-cell-subtitle">Divisions</span>
+                        </aside>
+                    </div>
+                </li>
+
+                    <li class="DivisionsMenu-cell">
+
+<a class="DivisionsMenu-link" data-gtm-action="Division Select" data-gtm-action-off="" data-gtm-category="Header" data-gtm-event="Click" data-gtm-label="Enterprise Computing Solutions" href="/en/divisions/enterprise-computing-solutions">
+                            <div class="DivisionsMenu-cell-wrap">
+                                <p class="DivisionsMenu-cell-title">Enterprise Computing Solutions</p>
+                                <p class="DivisionsMenu-cell-description">Special advising in end-to-end IT Infrastructure solutions.</p>
+                            </div>
+</a>
+                    </li>
+                    <li class="DivisionsMenu-cell">
+
+<a class="DivisionsMenu-link" data-gtm-action="Division Select" data-gtm-action-off="" data-gtm-category="Header" data-gtm-event="Click" data-gtm-label="Electronic Components" href="/en/divisions/electronic-components">
+                            <div class="DivisionsMenu-cell-wrap">
+                                <p class="DivisionsMenu-cell-title">Electronic Components</p>
+                                <p class="DivisionsMenu-cell-description">A comprehensive portfolio of electronic components.</p>
+                            </div>
+</a>
+                    </li>
+                    <li class="DivisionsMenu-cell">
+
+<a class="DivisionsMenu-link" data-gtm-action="Division Select" data-gtm-action-off="" data-gtm-category="Header" data-gtm-event="Click" data-gtm-label="Arrow Intelligent Systems" href="/en/divisions/arrow-intelligent-systems">
+                            <div class="DivisionsMenu-cell-wrap">
+                                <p class="DivisionsMenu-cell-title">Arrow Intelligent Systems</p>
+                                <p class="DivisionsMenu-cell-description">Turning Possibility into Reality. Together.</p>
+                            </div>
+</a>
+                    </li>
+                    <li class="DivisionsMenu-cell">
+
+<a class="DivisionsMenu-link" data-gtm-action="Division Select" data-gtm-action-off="" data-gtm-category="Header" data-gtm-event="Click" data-gtm-label="Arrow Value Recovery" href="/en/divisions/arrow-value-recovery">
+                            <div class="DivisionsMenu-cell-wrap">
+                                <p class="DivisionsMenu-cell-title">Arrow Value Recovery</p>
+                                <p class="DivisionsMenu-cell-description">Reverse Supply Chain and IT Asset Disposition Solutions.</p>
+                            </div>
+</a>
+                    </li>
+            </ul>
+            <a id="divisions-menu-close-button" class="DivisionsMenu-close js-division-dropdown" data-toggle-show-hide="DivisionsMenu">
+                <span class="Icon Icon--cross"></span>
+            </a>
+        </div>
+    </div>
+</div>
+
+    <div id="page-header" class="" role="banner">
+        <div class="Content head-topSection">
+            <nav class="NavigationIcons TopLinks u-row">
+                <ul class="TopLinksDropdown">
+    
+<li class="NavLinks dropdown-hidden TopLinksDropdown-divisions" id="header-division">
+    <div class="TopLinksDropdown-division-dropdown">
+        <a href="#" class="NavigationIcons-list--block NavigationIcons-item-divisions js-division-dropdown" data-toggle-show-hide="DivisionsMenu"
+           data-gtm-event="Click" data-gtm-action="Click" data-gtm-category="Header" data-gtm-label="Arrow Divisions" >
+            <span class="head-uppercase">Arrow Divisions</span>
+        </a>
+    </div>
+</li>
+
+    <li class="NavLinks dropdown-hidden">
+        <span class="TopLinksDropdown-contactUsLabel head-uppercase">CONTACT US: </span>
+<a class="TopLinksDropdown-contactUsText NavigationIcons-list--block" href="tel:1-855-326-4757">1-855-326-4757</a>
+
+    </li>
+
+    <li class="NavLinks" id="header-chat">
+    <a data-chat-status="https://server.iad.liveperson.net/hc/18784960/?cmd=repstate&amp;site=18784960&amp;channel=web&amp;ver=1&amp;SV!skill=Arrow%20Support"
+       href="https://server.iad.liveperson.net/hc/18784960/?cmd=file&amp;file=visitorWantsToChat&amp;site=18784960&amp;byhref=1&amp;SV!skill=Arrow%20Support"
+       class="NavIcons-chatText Chat-button NavigationIcons-list--block head-uppercase"
+       data-gtm-event="Click" data-gtm-action="Chat" data-gtm-category="Support" data-gtm-label="Header" >
+       Live support
+    </a>
+</li>
+
+
+    <li class="NavLinks TopLinksDropdown-dropdown" data-header-dropdown>
+        <div class="TopLinksDropdown--language-dropdown">
+            <a class="NavigationIcons-list--block js-language-dropdown" href="#" title="Language" data-toggle-show-hide="HeaderDd--language"
+            data-gtm-event="Click" data-gtm-action="Click" data-gtm-category="Header" data-gtm-label="Language Selector" >
+                <span class="NavigationIcons-item--dropdown-language head-uppercase">LANGUAGE:</span>
+                <span class="NavigationIcons-item--dropdown-name head-uppercase">ENG</span>
+                <span class="Icon Icon--left_arrow"></span>
+                <span class="Icon Icon--arrow-down"></span>
+            </a>
+            <div class="HeaderDd-wrap HeaderDd--language">
+                <div class="HeaderDd-intro u-cf">
+                    Select your language
+                </div>
+                    <ul class="linkList">
+                                <li class="linkList-item is-active">
+                                    <a href="#" data-gtm-event="Click" data-gtm-action="Language Select" data-gtm-category="Header" data-gtm-label="en"  class="js-language-dropdown-item" >English</a>
+                                </li>
+                                <li class="linkList-item">
+                                    <a href="/fr-fr" data-gtm-event="Click" data-gtm-action="Language Select" data-gtm-category="Header" data-gtm-label="fr-FR" >Fran&#231;ais</a>
+                                </li>
+                                <li class="linkList-item">
+                                    <a href="/de-de" data-gtm-event="Click" data-gtm-action="Language Select" data-gtm-category="Header" data-gtm-label="de-DE" >Deutsch</a>
+                                </li>
+                                <li class="linkList-item">
+                                    <a href="/it-it" data-gtm-event="Click" data-gtm-action="Language Select" data-gtm-category="Header" data-gtm-label="it-IT" >Italiano</a>
+                                </li>
+                                <li class="linkList-item">
+                                    <a href="/es-mx" data-gtm-event="Click" data-gtm-action="Language Select" data-gtm-category="Header" data-gtm-label="es-MX" >Espa&#241;ol</a>
+                                </li>
+                                <li class="linkList-item">
+                                    <a href="/zh-cn" data-gtm-event="Click" data-gtm-action="Language Select" data-gtm-category="Header" data-gtm-label="zh-CN" >简体中文</a>
+                                </li>
+                    </ul>
+            </div>
+        </div>
+    </li>
+
+    
+
+
+<li id="header-currency" class="NavLinks TopLinksDropdown-dropdown" data-header-dropdown>
+    <div class="TopLinksDropdown-dropdown-currency">
+        <a class="NavigationIcons-list--block js-currency-dropdown" href="#" title="Currency" data-toggle-show-hide="HeaderDd-currency"
+        data-gtm-event="Click" data-gtm-action="Click" data-gtm-category="Header" data-gtm-label="Currency Selector" >
+            <span class="NavigationIcons-item--dropdown-currency head-uppercase">Currency:</span>
+            <span class="NavigationIcons-item--dropdown-symbol">$</span>
+            <span class="NavigationIcons-item--dropdown-name head-uppercase">USD</span>
+            <span class="Icon Icon--left_arrow"></span>
+            <span class="Icon Icon--arrow-down"></span>
+        </a>
+        <div data-domain=".arrow.com" class="HeaderDd-wrap HeaderDd-currency">
+            <div class="HeaderDd-intro u-cf">
+                <div class="HeaderDd-title">Select a currency for display</div>
+            </div>
+            <div class="HeaderDd-list u-cf">
+                <form id="HeaderDd-currency-form" action="/currency/updatecurrency" method="post">
+                        <ul class="HeaderDd-list-column">
+                                <li>
+                                    <a href="/en/research-and-events/articles/setting-up-your-raspberry-pi-first-time" data-code="USD" data-culture="en-US"
+                                       class="HeaderDd-list-item is-active"
+                                       data-gtm-event="Click" data-gtm-action="Currency Select" data-gtm-category="Header" data-gtm-label="USD" >
+                                        <span class="HeaderDd-list-item-name">USD</span>
+                                        <span class="HeaderDd-list-item-rate">
+                                            <span class="HeaderDd-list-item-symbol">$</span>
+                                        </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/en/research-and-events/articles/setting-up-your-raspberry-pi-first-time" data-code="AUD" data-culture="en-AU"
+                                       class="HeaderDd-list-item "
+                                       data-gtm-event="Click" data-gtm-action="Currency Select" data-gtm-category="Header" data-gtm-label="AUD" >
+                                        <span class="HeaderDd-list-item-name">AUD</span>
+                                        <span class="HeaderDd-list-item-rate">
+                                            <span class="HeaderDd-list-item-symbol">$</span>
+                                        </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/en/research-and-events/articles/setting-up-your-raspberry-pi-first-time" data-code="BRL" data-culture="pt-BR"
+                                       class="HeaderDd-list-item "
+                                       data-gtm-event="Click" data-gtm-action="Currency Select" data-gtm-category="Header" data-gtm-label="BRL" >
+                                        <span class="HeaderDd-list-item-name">BRL</span>
+                                        <span class="HeaderDd-list-item-rate">
+                                            <span class="HeaderDd-list-item-symbol">R$</span>
+                                        </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/en/research-and-events/articles/setting-up-your-raspberry-pi-first-time" data-code="CAD" data-culture="en-CA"
+                                       class="HeaderDd-list-item "
+                                       data-gtm-event="Click" data-gtm-action="Currency Select" data-gtm-category="Header" data-gtm-label="CAD" >
+                                        <span class="HeaderDd-list-item-name">CAD</span>
+                                        <span class="HeaderDd-list-item-rate">
+                                            <span class="HeaderDd-list-item-symbol">$</span>
+                                        </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/en/research-and-events/articles/setting-up-your-raspberry-pi-first-time" data-code="CNY" data-culture="zh-CN"
+                                       class="HeaderDd-list-item "
+                                       data-gtm-event="Click" data-gtm-action="Currency Select" data-gtm-category="Header" data-gtm-label="CNY" >
+                                        <span class="HeaderDd-list-item-name">CNY</span>
+                                        <span class="HeaderDd-list-item-rate">
+                                            <span class="HeaderDd-list-item-symbol">&#165;</span>
+                                        </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/en/research-and-events/articles/setting-up-your-raspberry-pi-first-time" data-code="EUR" data-culture="en-IE"
+                                       class="HeaderDd-list-item "
+                                       data-gtm-event="Click" data-gtm-action="Currency Select" data-gtm-category="Header" data-gtm-label="EUR" >
+                                        <span class="HeaderDd-list-item-name">EUR</span>
+                                        <span class="HeaderDd-list-item-rate">
+                                            <span class="HeaderDd-list-item-symbol">€</span>
+                                        </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/en/research-and-events/articles/setting-up-your-raspberry-pi-first-time" data-code="GBP" data-culture="en-GB"
+                                       class="HeaderDd-list-item "
+                                       data-gtm-event="Click" data-gtm-action="Currency Select" data-gtm-category="Header" data-gtm-label="GBP" >
+                                        <span class="HeaderDd-list-item-name">GBP</span>
+                                        <span class="HeaderDd-list-item-rate">
+                                            <span class="HeaderDd-list-item-symbol">&#163;</span>
+                                        </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/en/research-and-events/articles/setting-up-your-raspberry-pi-first-time" data-code="HKD" data-culture="zh-HK"
+                                       class="HeaderDd-list-item "
+                                       data-gtm-event="Click" data-gtm-action="Currency Select" data-gtm-category="Header" data-gtm-label="HKD" >
+                                        <span class="HeaderDd-list-item-name">HKD</span>
+                                        <span class="HeaderDd-list-item-rate">
+                                            <span class="HeaderDd-list-item-symbol">HK$</span>
+                                        </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/en/research-and-events/articles/setting-up-your-raspberry-pi-first-time" data-code="INR" data-culture="hi-IN"
+                                       class="HeaderDd-list-item "
+                                       data-gtm-event="Click" data-gtm-action="Currency Select" data-gtm-category="Header" data-gtm-label="INR" >
+                                        <span class="HeaderDd-list-item-name">INR</span>
+                                        <span class="HeaderDd-list-item-rate">
+                                            <span class="HeaderDd-list-item-symbol">₹</span>
+                                        </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/en/research-and-events/articles/setting-up-your-raspberry-pi-first-time" data-code="JPY" data-culture="ja-JP"
+                                       class="HeaderDd-list-item "
+                                       data-gtm-event="Click" data-gtm-action="Currency Select" data-gtm-category="Header" data-gtm-label="JPY" >
+                                        <span class="HeaderDd-list-item-name">JPY</span>
+                                        <span class="HeaderDd-list-item-rate">
+                                            <span class="HeaderDd-list-item-symbol">&#165;</span>
+                                        </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/en/research-and-events/articles/setting-up-your-raspberry-pi-first-time" data-code="KRW" data-culture="ko-KR"
+                                       class="HeaderDd-list-item "
+                                       data-gtm-event="Click" data-gtm-action="Currency Select" data-gtm-category="Header" data-gtm-label="KRW" >
+                                        <span class="HeaderDd-list-item-name">KRW</span>
+                                        <span class="HeaderDd-list-item-rate">
+                                            <span class="HeaderDd-list-item-symbol">₩</span>
+                                        </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/en/research-and-events/articles/setting-up-your-raspberry-pi-first-time" data-code="MXN" data-culture="es-MX"
+                                       class="HeaderDd-list-item "
+                                       data-gtm-event="Click" data-gtm-action="Currency Select" data-gtm-category="Header" data-gtm-label="MXN" >
+                                        <span class="HeaderDd-list-item-name">MXN</span>
+                                        <span class="HeaderDd-list-item-rate">
+                                            <span class="HeaderDd-list-item-symbol">$</span>
+                                        </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/en/research-and-events/articles/setting-up-your-raspberry-pi-first-time" data-code="MYR" data-culture="ms-MY"
+                                       class="HeaderDd-list-item "
+                                       data-gtm-event="Click" data-gtm-action="Currency Select" data-gtm-category="Header" data-gtm-label="MYR" >
+                                        <span class="HeaderDd-list-item-name">MYR</span>
+                                        <span class="HeaderDd-list-item-rate">
+                                            <span class="HeaderDd-list-item-symbol">RM</span>
+                                        </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/en/research-and-events/articles/setting-up-your-raspberry-pi-first-time" data-code="SGD" data-culture="zh-SG"
+                                       class="HeaderDd-list-item "
+                                       data-gtm-event="Click" data-gtm-action="Currency Select" data-gtm-category="Header" data-gtm-label="SGD" >
+                                        <span class="HeaderDd-list-item-name">SGD</span>
+                                        <span class="HeaderDd-list-item-rate">
+                                            <span class="HeaderDd-list-item-symbol">$</span>
+                                        </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/en/research-and-events/articles/setting-up-your-raspberry-pi-first-time" data-code="TWD" data-culture="zh-TW"
+                                       class="HeaderDd-list-item "
+                                       data-gtm-event="Click" data-gtm-action="Currency Select" data-gtm-category="Header" data-gtm-label="TWD" >
+                                        <span class="HeaderDd-list-item-name">TWD</span>
+                                        <span class="HeaderDd-list-item-rate">
+                                            <span class="HeaderDd-list-item-symbol">NT$</span>
+                                        </span>
+                                    </a>
+                                </li>
+                        </ul>
+                    <input type="hidden" value="https://www.arrow.com/en/research-and-events/articles/setting-up-your-raspberry-pi-first-time" name="pageUrl" />
+                    <input type="hidden" value="USD" name="currencyCode" />
+                </form>
+            </div>
+        </div>
+    </div>
+</li>
+
+
+
+    <li class="NavLinks header-hidden">
+        <span class="TopLinksDropdown-contactUsLabel head-uppercase">CONTACT US: </span>
+<a class="TopLinksDropdown-contactUsText NavigationIcons-list--block" href="tel:1-855-326-4757">1-855-326-4757</a>
+
+    </li>
+</ul>
+            </nav>
+            <div class="BottomLinks u-row">
+                <span class="Hamburger-container">
+                    <section id="Hamburger" class="Hamburger">
+    <div class="hamburger-box">
+        <a class="Icon--hamburger js-HamburgerToggle" data-toggle-show-hide="mobile-navigation" href="#"></a>
+    </div>
+    <div class="mobile-navigation">
+        <ul class="mobile-dropdown" itemscope itemtype="http://schema.org/SiteNavigationElement">
+            <li>
+                
+
+
+<ul class="megamenu Content">
+        <li class="NavLinks megamenu-tab
+            is-red"
+            data-gtm-event="Hover" data-gtm-action="Hover" data-gtm-category="MegaMenu" data-gtm-label="Products" data-gtm-mediator="MegaMenuproducts" >
+            <a href="/en/products"
+               data-panel="products"
+               class="NavigationIcons-list--block megamenu-tab-link"
+               itemprop="url"
+               data-gtm-event="Click" data-gtm-action="Click" data-gtm-category="MegaMenu" data-gtm-label="Products - /en/products" 
+               tabindex="3">
+                <span class="megamenu-tab-item is-red">Products</span>
+                    <div class="megamenu-newPill">
+                        83,101
+                        <span class="megamenu-newPill-text">
+                            New 
+                        </span>
+                    </div>
+            </a>
+        </li>
+        <li class="NavLinks megamenu-tab
+            is-blue"
+            data-gtm-event="Hover" data-gtm-action="Hover" data-gtm-category="MegaMenu" data-gtm-label="Datasheets" data-gtm-mediator="MegaMenudatasheets" >
+            <a href="/en/datasheets"
+               data-panel="datasheets"
+               class="NavigationIcons-list--block megamenu-tab-link"
+               itemprop="url"
+               data-gtm-event="Click" data-gtm-action="Click" data-gtm-category="MegaMenu" data-gtm-label="Datasheets - /en/datasheets" 
+               tabindex="4">
+                <span class="megamenu-tab-item is-blue">Datasheets</span>
+            </a>
+        </li>
+        <li class="NavLinks megamenu-tab
+            is-purple"
+            data-gtm-event="Hover" data-gtm-action="Hover" data-gtm-category="MegaMenu" data-gtm-label="Referencedesigns" data-gtm-mediator="MegaMenureferencedesigns" >
+            <a href="/en/reference-designs"
+               data-panel="referencedesigns"
+               class="NavigationIcons-list--block megamenu-tab-link"
+               itemprop="url"
+               data-gtm-event="Click" data-gtm-action="Click" data-gtm-category="MegaMenu" data-gtm-label="Referencedesigns - /en/reference-designs" 
+               tabindex="5">
+                <span class="megamenu-tab-item is-purple">Reference Designs</span>
+            </a>
+        </li>
+        <li class="NavLinks megamenu-tab
+            is-orange is-current"
+            data-gtm-event="Hover" data-gtm-action="Hover" data-gtm-category="MegaMenu" data-gtm-label="Researchandevents" data-gtm-mediator="MegaMenuresearchandevents" >
+            <a href="/en/research-and-events"
+               data-panel="researchandevents"
+               class="NavigationIcons-list--block megamenu-tab-link"
+               itemprop="url"
+               data-gtm-event="Click" data-gtm-action="Click" data-gtm-category="MegaMenu" data-gtm-label="Researchandevents - /en/research-and-events" 
+               tabindex="6">
+                <span class="megamenu-tab-item is-orange is-current">Articles and Videos</span>
+            </a>
+        </li>
+        <li class="NavLinks megamenu-tab
+            is-green"
+            data-gtm-event="Hover" data-gtm-action="Hover" data-gtm-category="MegaMenu" data-gtm-label="Designcenter" data-gtm-mediator="MegaMenudesigncenter" >
+            <a href="/en/design-center"
+               data-panel="designcenter"
+               class="NavigationIcons-list--block megamenu-tab-link"
+               itemprop="url"
+               data-gtm-event="Click" data-gtm-action="Click" data-gtm-category="MegaMenu" data-gtm-label="Designcenter - /en/design-center" 
+               tabindex="7">
+                <span class="megamenu-tab-item is-green">Design Center</span>
+            </a>
+        </li>
+        <li class="NavLinks megamenu-tab
+            is-pink showhide-ignore"
+            data-gtm-event="Hover" data-gtm-action="Hover" data-gtm-category="MegaMenu" data-gtm-label="Indiegogo" data-gtm-mediator="MegaMenuindiegogo" >
+            <a href="/en/indiegogo"
+               data-panel="indiegogo"
+               class="NavigationIcons-list--block megamenu-tab-link"
+               itemprop="url"
+               data-gtm-event="Click" data-gtm-action="Click" data-gtm-category="MegaMenu" data-gtm-label="Indiegogo - /en/indiegogo" 
+               tabindex="8">
+                <span class="megamenu-tab-item is-pink showhide-ignore">Indiegogo</span>
+            </a>
+        </li>
+</ul>
+
+
+
+            </li>
+            <li>
+                <ul class="UtilityLinks">
+    <li class="NavLinks UtilityLinks-text header-hidden">
+        <div>
+    <a href="/en/login?gotoSplash=true&amp;url=" tabindex="2" title="Login" class="NavigationIcons-list--block"
+       data-gtm-event="Click" data-gtm-action="Click" data-gtm-category="Header" data-gtm-label="Login-Signup" >
+        <span class="head-uppercase">Login</span>
+    </a>
+<div>
+
+    </li>
+    <li class="NavLinks UtilityLinks-text">
+            <div class="UtilityLinks-text-myArrow js-myArrowTM TopLinksDropdown--regions-dropdown MyArrowHeader"
+         id="myarrowHeader"
+         data-header-dropdown>
+        <a class="NavigationIcons-list--block js-regions-dropdown" href="/arrow-services/myarrow"
+            data-gtm-event="Click" data-gtm-action="Click" data-gtm-category="Header" data-gtm-label="MyArrow" 
+            data-toggle-show-hide="HeaderDd-regions">
+            <span class="Icon Icon--my-arrow-tm" aria-hidden="true"></span>
+            <span class="visuallyhidden">MyArrow&trade;</span>
+            <span class="Icon Icon--left_arrow"></span>
+        </a>
+        <div class="ProgressBar"></div>
+        <div class="HeaderDd-regions HeaderDd-wrap">
+    <div class="HeaderDd-intro u-cf">
+        <div class="HeaderDd-title">
+            Please select your region
+        </div>
+    </div>
+    <ul class="linkList">
+            <li class="linkList-item">
+                <a data-value=arrowna name=Americas-Denver>
+                    Americas-Denver
+                </a> 
+            </li>
+            <li class="linkList-item">
+                <a data-value=na name=Americas>
+                    Americas
+                </a> 
+            </li>
+            <li class="linkList-item">
+                <a data-value=arrowse name=Southern Europe>
+                    Southern Europe
+                </a> 
+            </li>
+            <li class="linkList-item">
+                <a data-value=arrowne name=Northern Europe>
+                    Northern Europe
+                </a> 
+            </li>
+            <li class="linkList-item">
+                <a data-value=arrowce name=Central Europe>
+                    Central Europe
+                </a> 
+            </li>
+            <li class="linkList-item">
+                <a data-value=arrowap name=Asia/Pacific>
+                    Asia/Pacific
+                </a> 
+            </li>
+</ul>
+</div>
+    </div>
+
+    </li>
+    <li class="NavLinks UtilityLinks-text dropdown-hidden UtilityLinks-login">
+        <div>
+    <a href="/en/login?gotoSplash=true&amp;url=" tabindex="2" title="Login" class="NavigationIcons-list--block"
+       data-gtm-event="Click" data-gtm-action="Click" data-gtm-category="Header" data-gtm-label="Login-Signup" >
+        <span class="head-uppercase">Login</span>
+    </a>
+<div>
+
+    </li>
+</ul>
+
+            </li>
+            <li>
+                <ul class="TopLinksDropdown">
+    
+<li class="NavLinks dropdown-hidden TopLinksDropdown-divisions" id="header-division">
+    <div class="TopLinksDropdown-division-dropdown">
+        <a href="#" class="NavigationIcons-list--block NavigationIcons-item-divisions js-division-dropdown" data-toggle-show-hide="DivisionsMenu"
+           data-gtm-event="Click" data-gtm-action="Click" data-gtm-category="Header" data-gtm-label="Arrow Divisions" >
+            <span class="head-uppercase">Arrow Divisions</span>
+        </a>
+    </div>
+</li>
+
+    <li class="NavLinks dropdown-hidden">
+        <span class="TopLinksDropdown-contactUsLabel head-uppercase">CONTACT US: </span>
+<a class="TopLinksDropdown-contactUsText NavigationIcons-list--block" href="tel:1-855-326-4757">1-855-326-4757</a>
+
+    </li>
+
+    <li class="NavLinks" id="header-chat">
+    <a data-chat-status="https://server.iad.liveperson.net/hc/18784960/?cmd=repstate&amp;site=18784960&amp;channel=web&amp;ver=1&amp;SV!skill=Arrow%20Support"
+       href="https://server.iad.liveperson.net/hc/18784960/?cmd=file&amp;file=visitorWantsToChat&amp;site=18784960&amp;byhref=1&amp;SV!skill=Arrow%20Support"
+       class="NavIcons-chatText Chat-button NavigationIcons-list--block head-uppercase"
+       data-gtm-event="Click" data-gtm-action="Chat" data-gtm-category="Support" data-gtm-label="Header" >
+       Live support
+    </a>
+</li>
+
+
+    <li class="NavLinks TopLinksDropdown-dropdown" data-header-dropdown>
+        <div class="TopLinksDropdown--language-dropdown">
+            <a class="NavigationIcons-list--block js-language-dropdown" href="#" title="Language" data-toggle-show-hide="HeaderDd--language"
+            data-gtm-event="Click" data-gtm-action="Click" data-gtm-category="Header" data-gtm-label="Language Selector" >
+                <span class="NavigationIcons-item--dropdown-language head-uppercase">LANGUAGE:</span>
+                <span class="NavigationIcons-item--dropdown-name head-uppercase">ENG</span>
+                <span class="Icon Icon--left_arrow"></span>
+                <span class="Icon Icon--arrow-down"></span>
+            </a>
+            <div class="HeaderDd-wrap HeaderDd--language">
+                <div class="HeaderDd-intro u-cf">
+                    Select your language
+                </div>
+                    <ul class="linkList">
+                                <li class="linkList-item is-active">
+                                    <a href="#" data-gtm-event="Click" data-gtm-action="Language Select" data-gtm-category="Header" data-gtm-label="en"  class="js-language-dropdown-item" >English</a>
+                                </li>
+                                <li class="linkList-item">
+                                    <a href="/fr-fr" data-gtm-event="Click" data-gtm-action="Language Select" data-gtm-category="Header" data-gtm-label="fr-FR" >Fran&#231;ais</a>
+                                </li>
+                                <li class="linkList-item">
+                                    <a href="/de-de" data-gtm-event="Click" data-gtm-action="Language Select" data-gtm-category="Header" data-gtm-label="de-DE" >Deutsch</a>
+                                </li>
+                                <li class="linkList-item">
+                                    <a href="/it-it" data-gtm-event="Click" data-gtm-action="Language Select" data-gtm-category="Header" data-gtm-label="it-IT" >Italiano</a>
+                                </li>
+                                <li class="linkList-item">
+                                    <a href="/es-mx" data-gtm-event="Click" data-gtm-action="Language Select" data-gtm-category="Header" data-gtm-label="es-MX" >Espa&#241;ol</a>
+                                </li>
+                                <li class="linkList-item">
+                                    <a href="/zh-cn" data-gtm-event="Click" data-gtm-action="Language Select" data-gtm-category="Header" data-gtm-label="zh-CN" >简体中文</a>
+                                </li>
+                    </ul>
+            </div>
+        </div>
+    </li>
+
+    
+
+
+<li id="header-currency" class="NavLinks TopLinksDropdown-dropdown" data-header-dropdown>
+    <div class="TopLinksDropdown-dropdown-currency">
+        <a class="NavigationIcons-list--block js-currency-dropdown" href="#" title="Currency" data-toggle-show-hide="HeaderDd-currency"
+        data-gtm-event="Click" data-gtm-action="Click" data-gtm-category="Header" data-gtm-label="Currency Selector" >
+            <span class="NavigationIcons-item--dropdown-currency head-uppercase">Currency:</span>
+            <span class="NavigationIcons-item--dropdown-symbol">$</span>
+            <span class="NavigationIcons-item--dropdown-name head-uppercase">USD</span>
+            <span class="Icon Icon--left_arrow"></span>
+            <span class="Icon Icon--arrow-down"></span>
+        </a>
+        <div data-domain=".arrow.com" class="HeaderDd-wrap HeaderDd-currency">
+            <div class="HeaderDd-intro u-cf">
+                <div class="HeaderDd-title">Select a currency for display</div>
+            </div>
+            <div class="HeaderDd-list u-cf">
+                <form id="HeaderDd-currency-form" action="/currency/updatecurrency" method="post">
+                        <ul class="HeaderDd-list-column">
+                                <li>
+                                    <a href="/en/research-and-events/articles/setting-up-your-raspberry-pi-first-time" data-code="USD" data-culture="en-US"
+                                       class="HeaderDd-list-item is-active"
+                                       data-gtm-event="Click" data-gtm-action="Currency Select" data-gtm-category="Header" data-gtm-label="USD" >
+                                        <span class="HeaderDd-list-item-name">USD</span>
+                                        <span class="HeaderDd-list-item-rate">
+                                            <span class="HeaderDd-list-item-symbol">$</span>
+                                        </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/en/research-and-events/articles/setting-up-your-raspberry-pi-first-time" data-code="AUD" data-culture="en-AU"
+                                       class="HeaderDd-list-item "
+                                       data-gtm-event="Click" data-gtm-action="Currency Select" data-gtm-category="Header" data-gtm-label="AUD" >
+                                        <span class="HeaderDd-list-item-name">AUD</span>
+                                        <span class="HeaderDd-list-item-rate">
+                                            <span class="HeaderDd-list-item-symbol">$</span>
+                                        </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/en/research-and-events/articles/setting-up-your-raspberry-pi-first-time" data-code="BRL" data-culture="pt-BR"
+                                       class="HeaderDd-list-item "
+                                       data-gtm-event="Click" data-gtm-action="Currency Select" data-gtm-category="Header" data-gtm-label="BRL" >
+                                        <span class="HeaderDd-list-item-name">BRL</span>
+                                        <span class="HeaderDd-list-item-rate">
+                                            <span class="HeaderDd-list-item-symbol">R$</span>
+                                        </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/en/research-and-events/articles/setting-up-your-raspberry-pi-first-time" data-code="CAD" data-culture="en-CA"
+                                       class="HeaderDd-list-item "
+                                       data-gtm-event="Click" data-gtm-action="Currency Select" data-gtm-category="Header" data-gtm-label="CAD" >
+                                        <span class="HeaderDd-list-item-name">CAD</span>
+                                        <span class="HeaderDd-list-item-rate">
+                                            <span class="HeaderDd-list-item-symbol">$</span>
+                                        </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/en/research-and-events/articles/setting-up-your-raspberry-pi-first-time" data-code="CNY" data-culture="zh-CN"
+                                       class="HeaderDd-list-item "
+                                       data-gtm-event="Click" data-gtm-action="Currency Select" data-gtm-category="Header" data-gtm-label="CNY" >
+                                        <span class="HeaderDd-list-item-name">CNY</span>
+                                        <span class="HeaderDd-list-item-rate">
+                                            <span class="HeaderDd-list-item-symbol">&#165;</span>
+                                        </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/en/research-and-events/articles/setting-up-your-raspberry-pi-first-time" data-code="EUR" data-culture="en-IE"
+                                       class="HeaderDd-list-item "
+                                       data-gtm-event="Click" data-gtm-action="Currency Select" data-gtm-category="Header" data-gtm-label="EUR" >
+                                        <span class="HeaderDd-list-item-name">EUR</span>
+                                        <span class="HeaderDd-list-item-rate">
+                                            <span class="HeaderDd-list-item-symbol">€</span>
+                                        </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/en/research-and-events/articles/setting-up-your-raspberry-pi-first-time" data-code="GBP" data-culture="en-GB"
+                                       class="HeaderDd-list-item "
+                                       data-gtm-event="Click" data-gtm-action="Currency Select" data-gtm-category="Header" data-gtm-label="GBP" >
+                                        <span class="HeaderDd-list-item-name">GBP</span>
+                                        <span class="HeaderDd-list-item-rate">
+                                            <span class="HeaderDd-list-item-symbol">&#163;</span>
+                                        </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/en/research-and-events/articles/setting-up-your-raspberry-pi-first-time" data-code="HKD" data-culture="zh-HK"
+                                       class="HeaderDd-list-item "
+                                       data-gtm-event="Click" data-gtm-action="Currency Select" data-gtm-category="Header" data-gtm-label="HKD" >
+                                        <span class="HeaderDd-list-item-name">HKD</span>
+                                        <span class="HeaderDd-list-item-rate">
+                                            <span class="HeaderDd-list-item-symbol">HK$</span>
+                                        </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/en/research-and-events/articles/setting-up-your-raspberry-pi-first-time" data-code="INR" data-culture="hi-IN"
+                                       class="HeaderDd-list-item "
+                                       data-gtm-event="Click" data-gtm-action="Currency Select" data-gtm-category="Header" data-gtm-label="INR" >
+                                        <span class="HeaderDd-list-item-name">INR</span>
+                                        <span class="HeaderDd-list-item-rate">
+                                            <span class="HeaderDd-list-item-symbol">₹</span>
+                                        </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/en/research-and-events/articles/setting-up-your-raspberry-pi-first-time" data-code="JPY" data-culture="ja-JP"
+                                       class="HeaderDd-list-item "
+                                       data-gtm-event="Click" data-gtm-action="Currency Select" data-gtm-category="Header" data-gtm-label="JPY" >
+                                        <span class="HeaderDd-list-item-name">JPY</span>
+                                        <span class="HeaderDd-list-item-rate">
+                                            <span class="HeaderDd-list-item-symbol">&#165;</span>
+                                        </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/en/research-and-events/articles/setting-up-your-raspberry-pi-first-time" data-code="KRW" data-culture="ko-KR"
+                                       class="HeaderDd-list-item "
+                                       data-gtm-event="Click" data-gtm-action="Currency Select" data-gtm-category="Header" data-gtm-label="KRW" >
+                                        <span class="HeaderDd-list-item-name">KRW</span>
+                                        <span class="HeaderDd-list-item-rate">
+                                            <span class="HeaderDd-list-item-symbol">₩</span>
+                                        </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/en/research-and-events/articles/setting-up-your-raspberry-pi-first-time" data-code="MXN" data-culture="es-MX"
+                                       class="HeaderDd-list-item "
+                                       data-gtm-event="Click" data-gtm-action="Currency Select" data-gtm-category="Header" data-gtm-label="MXN" >
+                                        <span class="HeaderDd-list-item-name">MXN</span>
+                                        <span class="HeaderDd-list-item-rate">
+                                            <span class="HeaderDd-list-item-symbol">$</span>
+                                        </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/en/research-and-events/articles/setting-up-your-raspberry-pi-first-time" data-code="MYR" data-culture="ms-MY"
+                                       class="HeaderDd-list-item "
+                                       data-gtm-event="Click" data-gtm-action="Currency Select" data-gtm-category="Header" data-gtm-label="MYR" >
+                                        <span class="HeaderDd-list-item-name">MYR</span>
+                                        <span class="HeaderDd-list-item-rate">
+                                            <span class="HeaderDd-list-item-symbol">RM</span>
+                                        </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/en/research-and-events/articles/setting-up-your-raspberry-pi-first-time" data-code="SGD" data-culture="zh-SG"
+                                       class="HeaderDd-list-item "
+                                       data-gtm-event="Click" data-gtm-action="Currency Select" data-gtm-category="Header" data-gtm-label="SGD" >
+                                        <span class="HeaderDd-list-item-name">SGD</span>
+                                        <span class="HeaderDd-list-item-rate">
+                                            <span class="HeaderDd-list-item-symbol">$</span>
+                                        </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/en/research-and-events/articles/setting-up-your-raspberry-pi-first-time" data-code="TWD" data-culture="zh-TW"
+                                       class="HeaderDd-list-item "
+                                       data-gtm-event="Click" data-gtm-action="Currency Select" data-gtm-category="Header" data-gtm-label="TWD" >
+                                        <span class="HeaderDd-list-item-name">TWD</span>
+                                        <span class="HeaderDd-list-item-rate">
+                                            <span class="HeaderDd-list-item-symbol">NT$</span>
+                                        </span>
+                                    </a>
+                                </li>
+                        </ul>
+                    <input type="hidden" value="https://www.arrow.com/en/research-and-events/articles/setting-up-your-raspberry-pi-first-time" name="pageUrl" />
+                    <input type="hidden" value="USD" name="currencyCode" />
+                </form>
+            </div>
+        </div>
+    </div>
+</li>
+
+
+
+    <li class="NavLinks header-hidden">
+        <span class="TopLinksDropdown-contactUsLabel head-uppercase">CONTACT US: </span>
+<a class="TopLinksDropdown-contactUsText NavigationIcons-list--block" href="tel:1-855-326-4757">1-855-326-4757</a>
+
+    </li>
+</ul>
+            </li>
+        </ul>
+    </div>
+</section>
+
+                </span>
+
+                        <a style="background-image: url('https://static4.arrow.com/-/media/arrow/arrow-logo/logo-white.svg')" class="Logo Logo--base" href="/en">
+            Arrow Electronics Components Online
+        </a>
+
+
+                <nav class="NavigationIcons">
+                    <ul class="UtilityLinks">
+    <li class="NavLinks UtilityLinks-text header-hidden">
+        <div>
+    <a href="/en/login?gotoSplash=true&amp;url=" tabindex="2" title="Login" class="NavigationIcons-list--block"
+       data-gtm-event="Click" data-gtm-action="Click" data-gtm-category="Header" data-gtm-label="Login-Signup" >
+        <span class="head-uppercase">Login</span>
+    </a>
+<div>
+
+    </li>
+    <li class="NavLinks UtilityLinks-text">
+            <div class="UtilityLinks-text-myArrow js-myArrowTM TopLinksDropdown--regions-dropdown MyArrowHeader"
+         id="myarrowHeader"
+         data-header-dropdown>
+        <a class="NavigationIcons-list--block js-regions-dropdown" href="/arrow-services/myarrow"
+            data-gtm-event="Click" data-gtm-action="Click" data-gtm-category="Header" data-gtm-label="MyArrow" 
+            data-toggle-show-hide="HeaderDd-regions">
+            <span class="Icon Icon--my-arrow-tm" aria-hidden="true"></span>
+            <span class="visuallyhidden">MyArrow&trade;</span>
+            <span class="Icon Icon--left_arrow"></span>
+        </a>
+        <div class="ProgressBar"></div>
+        <div class="HeaderDd-regions HeaderDd-wrap">
+    <div class="HeaderDd-intro u-cf">
+        <div class="HeaderDd-title">
+            Please select your region
+        </div>
+    </div>
+    <ul class="linkList">
+            <li class="linkList-item">
+                <a data-value=arrowna name=Americas-Denver>
+                    Americas-Denver
+                </a> 
+            </li>
+            <li class="linkList-item">
+                <a data-value=na name=Americas>
+                    Americas
+                </a> 
+            </li>
+            <li class="linkList-item">
+                <a data-value=arrowse name=Southern Europe>
+                    Southern Europe
+                </a> 
+            </li>
+            <li class="linkList-item">
+                <a data-value=arrowne name=Northern Europe>
+                    Northern Europe
+                </a> 
+            </li>
+            <li class="linkList-item">
+                <a data-value=arrowce name=Central Europe>
+                    Central Europe
+                </a> 
+            </li>
+            <li class="linkList-item">
+                <a data-value=arrowap name=Asia/Pacific>
+                    Asia/Pacific
+                </a> 
+            </li>
+</ul>
+</div>
+    </div>
+
+    </li>
+    <li class="NavLinks UtilityLinks-text dropdown-hidden UtilityLinks-login">
+        <div>
+    <a href="/en/login?gotoSplash=true&amp;url=" tabindex="2" title="Login" class="NavigationIcons-list--block"
+       data-gtm-event="Click" data-gtm-action="Click" data-gtm-category="Header" data-gtm-label="Login-Signup" >
+        <span class="head-uppercase">Login</span>
+    </a>
+<div>
+
+    </li>
+</ul>
+
+                    <div class="NavLinks NavigationIcons-cart NavigationIcons-item" id="header-cart">
+                        <a href="/en/cart" title="View cart"
+   data-gtm-event="Click" data-gtm-action="Click" data-gtm-category="Header" data-gtm-label="Cart Icon" >
+    <div class="NavIcons-item-icon">
+        <span class="visuallyhidden">View cart</span>
+        <span class="Icon Icon--shopping-cart" aria-hidden="true"></span>
+        <span class="u-dot u-dot--red is-hidden"></span>
+    </div>
+</a>
+
+<div class="MyCart"></div>
+                    </div>
+                </nav>
+            </div>
+            <div class="HeaderSearch BottomLinks u-row">
+
+              <div class="HeaderSearch-searchBar--expanded">
+                <form method="GET" action="/en/products/search">
+    <div class="Search-bar">
+        <input type="text" name="q" accesskey="4" autocomplete="off" tabindex="1" class="js-search-input" />
+        <button class="Embedded-search-button" title="Search" type="submit">
+            <span class="Embedded-search-icon Icon Icon--mag-glass"></span>
+            <span class="visuallyhidden">Search</span>
+        </button>
+            <div class="Search-placeholder is-hidden">
+                <span class="Search-text--mobile">Search </span>
+                <span class="Search-text--tabletDesktop">Search over 1M products and millions of datasheets</span>
+            </div>
+    </div>
+</form>
+
+              </div>
+
+              <div class="HeaderSearch-minimisedHeader" data-toggle-show-hide="HeaderSearch-searchBar--minimised">
+                  <a class="HeaderSearch-minimisedHeader--cta Icon Icon--mag-glass"></a>
+                  <a class="HeaderSearch-minimisedHeader--cta Icon Icon--cross"></a>
+              </div>
+              <div class="HeaderSearch-searchBar--minimised">
+                  <div class="Content">
+                    <form method="GET" action="/en/products/search">
+    <div class="Search-bar">
+        <input type="text" name="q" accesskey="4" autocomplete="off" tabindex="1" class="js-search-input" />
+        <button class="Embedded-search-button" title="Search" type="submit">
+            <span class="Embedded-search-icon Icon Icon--mag-glass"></span>
+            <span class="visuallyhidden">Search</span>
+        </button>
+            <div class="Search-placeholder is-hidden">
+                <span class="Search-text--mobile">Search </span>
+                <span class="Search-text--tabletDesktop">Search over 1M products and millions of datasheets</span>
+            </div>
+    </div>
+</form>
+
+                  </div>
+              </div>
+
+            </div>
+        </div>
+        <div class="megamenu-wrapper">
+          
+
+
+<ul class="megamenu Content">
+        <li class="NavLinks megamenu-tab
+            is-red"
+            data-gtm-event="Hover" data-gtm-action="Hover" data-gtm-category="MegaMenu" data-gtm-label="Products" data-gtm-mediator="MegaMenuproducts" >
+            <a href="/en/products"
+               data-panel="products"
+               class="NavigationIcons-list--block megamenu-tab-link"
+               itemprop="url"
+               data-gtm-event="Click" data-gtm-action="Click" data-gtm-category="MegaMenu" data-gtm-label="Products - /en/products" 
+               tabindex="3">
+                <span class="megamenu-tab-item is-red">Products</span>
+                    <div class="megamenu-newPill">
+                        83,101
+                        <span class="megamenu-newPill-text">
+                            New 
+                        </span>
+                    </div>
+            </a>
+<div class="AjaxLoader--isDesktopOnly AjaxLoader megamenu-dropdown is=red" data-end-point="/header/getpanelcacheablerender?megaMenuId=1a5ccfc2-5408-46e2-a0d4-ee8c48d8008f&amp;lang=en" data-replace="true"><div class="Loader"><span></span></div></div>        </li>
+        <li class="NavLinks megamenu-tab
+            is-blue"
+            data-gtm-event="Hover" data-gtm-action="Hover" data-gtm-category="MegaMenu" data-gtm-label="Datasheets" data-gtm-mediator="MegaMenudatasheets" >
+            <a href="/en/datasheets"
+               data-panel="datasheets"
+               class="NavigationIcons-list--block megamenu-tab-link"
+               itemprop="url"
+               data-gtm-event="Click" data-gtm-action="Click" data-gtm-category="MegaMenu" data-gtm-label="Datasheets - /en/datasheets" 
+               tabindex="4">
+                <span class="megamenu-tab-item is-blue">Datasheets</span>
+            </a>
+<div class="AjaxLoader--isDesktopOnly AjaxLoader megamenu-dropdown is=blue" data-end-point="/header/getpanelcacheablerender?megaMenuId=e49c559c-d248-46f6-9f53-4acea318a2d4&amp;lang=en" data-replace="true"><div class="Loader"><span></span></div></div>        </li>
+        <li class="NavLinks megamenu-tab
+            is-purple"
+            data-gtm-event="Hover" data-gtm-action="Hover" data-gtm-category="MegaMenu" data-gtm-label="Referencedesigns" data-gtm-mediator="MegaMenureferencedesigns" >
+            <a href="/en/reference-designs"
+               data-panel="referencedesigns"
+               class="NavigationIcons-list--block megamenu-tab-link"
+               itemprop="url"
+               data-gtm-event="Click" data-gtm-action="Click" data-gtm-category="MegaMenu" data-gtm-label="Referencedesigns - /en/reference-designs" 
+               tabindex="5">
+                <span class="megamenu-tab-item is-purple">Reference Designs</span>
+            </a>
+<div class="AjaxLoader--isDesktopOnly AjaxLoader megamenu-dropdown is=purple" data-end-point="/header/getpanelcacheablerender?megaMenuId=9489e12c-669b-4b8a-80bb-1512a00aff19&amp;lang=en" data-replace="true"><div class="Loader"><span></span></div></div>        </li>
+        <li class="NavLinks megamenu-tab
+            is-orange is-current"
+            data-gtm-event="Hover" data-gtm-action="Hover" data-gtm-category="MegaMenu" data-gtm-label="Researchandevents" data-gtm-mediator="MegaMenuresearchandevents" >
+            <a href="/en/research-and-events"
+               data-panel="researchandevents"
+               class="NavigationIcons-list--block megamenu-tab-link"
+               itemprop="url"
+               data-gtm-event="Click" data-gtm-action="Click" data-gtm-category="MegaMenu" data-gtm-label="Researchandevents - /en/research-and-events" 
+               tabindex="6">
+                <span class="megamenu-tab-item is-orange is-current">Articles and Videos</span>
+            </a>
+<div class="AjaxLoader--isDesktopOnly AjaxLoader megamenu-dropdown is=orange" data-end-point="/header/getpanelcacheablerender?megaMenuId=6a0b2915-4f23-4169-8d36-aae12914887a&amp;lang=en" data-replace="true"><div class="Loader"><span></span></div></div>        </li>
+        <li class="NavLinks megamenu-tab
+            is-green"
+            data-gtm-event="Hover" data-gtm-action="Hover" data-gtm-category="MegaMenu" data-gtm-label="Designcenter" data-gtm-mediator="MegaMenudesigncenter" >
+            <a href="/en/design-center"
+               data-panel="designcenter"
+               class="NavigationIcons-list--block megamenu-tab-link"
+               itemprop="url"
+               data-gtm-event="Click" data-gtm-action="Click" data-gtm-category="MegaMenu" data-gtm-label="Designcenter - /en/design-center" 
+               tabindex="7">
+                <span class="megamenu-tab-item is-green">Design Center</span>
+            </a>
+<div class="AjaxLoader--isDesktopOnly AjaxLoader megamenu-dropdown is=green" data-end-point="/header/getpanelcacheablerender?megaMenuId=38544a99-6616-4309-ae4d-0ef6d41ba49d&amp;lang=en" data-replace="true"><div class="Loader"><span></span></div></div>        </li>
+        <li class="NavLinks megamenu-tab
+            is-pink showhide-ignore"
+            data-gtm-event="Hover" data-gtm-action="Hover" data-gtm-category="MegaMenu" data-gtm-label="Indiegogo" data-gtm-mediator="MegaMenuindiegogo" >
+            <a href="/en/indiegogo"
+               data-panel="indiegogo"
+               class="NavigationIcons-list--block megamenu-tab-link"
+               itemprop="url"
+               data-gtm-event="Click" data-gtm-action="Click" data-gtm-category="MegaMenu" data-gtm-label="Indiegogo - /en/indiegogo" 
+               tabindex="8">
+                <span class="megamenu-tab-item is-pink showhide-ignore">Indiegogo</span>
+            </a>
+        </li>
+</ul>
+
+
+
+        </div>
+    </div>
+</header>
+
+
+
+
+<section class="Typeahead js-typeahead Content" aria-hidden="true">
+    <div class="Typeahead-inner u-gutter-paddingBottom">
+        <div class="Typeahead-content">
+            <div class="js-search-autocomplete TypeaheadAutocomplete"></div>
+        </div>
+    </div>
+</section>
+
+
+<div id="MyArrowUserNotification"></div>
+
+        <div class="Main-content Content-wrapper" role="main" id="main-content" tabindex="-1">
+            
+<div id="pageLoadingError" style="display:none;" class="AnnouncementBar AnnouncementBar--withIcon AnnouncementBar--isError AnnouncementBar--isHidden">
+    <div class="Content">
+        <div class="AnnouncementBar-icon">
+            <div class="Icon Icon--warning"></div>
+        </div>
+        <div class="AnnouncementBar-content">
+            <h3 class="AnnouncementBar-title">Sorry, there was an error loading the page.</h3>
+            <p class="AnnouncementBar-paragraph">Please refresh the browser and try again. If the problem persists please contact us</p>
+        </div>
+    </div>
+</div>
+
+            
+
+
+
+
+    <div class="Breadcrumb u-desktop-up-show ">
+        <ul class="Content" itemscope itemtype="http://schema.org/BreadcrumbList">
+
+                <li class="Breadcrumb-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                        <a href="/en" itemprop="url">
+                            <span itemprop="name">Home</span>
+                        </a>
+                    <meta itemprop="position" content="0"/>
+                </li>
+                <li class="Breadcrumb-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                        <a href="/en/research-and-events" itemprop="url">
+                            <span itemprop="name">Articles and Videos</span>
+                        </a>
+                    <meta itemprop="position" content="1"/>
+                </li>
+                <li class="Breadcrumb-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                            <span itemprop="name">Raspberry Pi Quick Start Guide</span>
+                    <meta itemprop="position" content="2"/>
+                </li>
+        </ul>
+    </div>
+
+
+
+
+
+
+    <div class="Content u-cf">
+        <div class="u-row">
+            <article class="Article u-grid-6" itemscope itemtype="http://schema.org/Article">
+                <meta itemscope itemprop="mainEntityOfPage" itemtype="https://schema.org/WebPage" itemid="http://www.arrow.com:81/en/research-and-events/articles/setting-up-your-raspberry-pi-first-time" />
+
+                <span itemprop="publisher" itemscope itemtype="https://schema.org/Organization" style="display: none">
+                    <meta itemprop="name" content="Arrow Electronics" />
+                    <span itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
+                        <meta itemprop="url" content="https://static4.arrow.com/-/media/arrow/arrow-logo/seo-arrow-logo/seo-arrow-logo.png?mw=1239&amp;hash=8E4FFC61BB7C4F9D0DAFE0E73F1ACC54FB85D737" />
+                    </span>
+                </span>
+
+                <div class="Article-head u-mobile-padding">
+                    <div class="u-tablet-up-hide">
+                        <div class="RoundCtas RoundCtas--vertical is-orange">
+                            <a class="Icon Icon--circle Icon--share" data-image="https://static4.arrow.com/-/media/images/products/raspberry-pi-3-main.jpg?mw=639&amp;hash=F7A0E9D3B6041AA8E05F3A236585E45DA571E060" data-title="Raspberry+Pi+Quick+Start+Guide" href="/en/research-and-events/articles/setting-up-your-raspberry-pi-first-time"></a>
+                            <span class="gtm-track Icon Icon--circle Icon--save saveTo" data-gtm-action="Save to Project" data-gtm-action-off="" data-gtm-category="Design Center" data-gtm-event="Click" data-gtm-label="NewsArticle - ffa10fc2-e8f6-42f7-9ce6-62c354e36719" data-type="document" data-uri="arrow://news-article/ffa10fc2-e8f6-42f7-9ce6-62c354e36719" title="Save to projects"></span>
+                        </div>
+                    </div>
+                    <h1 class="Article-title" itemprop="headline">Raspberry Pi Quick Start Guide</h1>
+                    <div class="u-tablet-up-show">
+                        <div class="RoundCtas RoundCtas--horizontal is-orange">
+                            <a class="Icon Icon--circle Icon--share" data-image="https://static4.arrow.com/-/media/images/products/raspberry-pi-3-main.jpg?mw=639&amp;hash=F7A0E9D3B6041AA8E05F3A236585E45DA571E060" data-title="Raspberry+Pi+Quick+Start+Guide" href="/en/research-and-events/articles/setting-up-your-raspberry-pi-first-time"></a>
+                            <span class="gtm-track Icon Icon--circle Icon--save saveTo" data-gtm-action="Save to Project" data-gtm-action-off="" data-gtm-category="Design Center" data-gtm-event="Click" data-gtm-label="NewsArticle - ffa10fc2-e8f6-42f7-9ce6-62c354e36719" data-type="document" data-uri="arrow://news-article/ffa10fc2-e8f6-42f7-9ce6-62c354e36719" title="Save to projects"></span>
+                        </div>
+                    </div>
+                    <span class="Article-date">
+                            <meta itemprop="dateModified" content="2016-08-24T22:43:44" />
+                                                    <meta itemprop="datePublished" content="2016-08-24T22:35:00" />
+24 Aug 2016                    </span>
+                </div>
+                
+
+
+                    <div class="Article-image" itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
+                    <!-- Resize image for google with better quality -->
+                    <meta itemprop="url" content="https://static4.arrow.com/-/media/images/products/raspberry-pi-3-main.jpg" />
+                    <meta itemprop="width" content="500">
+                    <meta itemprop="height" content="500">
+                <picture><img alt="" class="" src="https://static4.arrow.com/-/media/images/products/raspberry-pi-3-main.jpg?mw=639&amp;hash=F7A0E9D3B6041AA8E05F3A236585E45DA571E060" /></picture>                
+            </div>
+
+
+                <div class="Article-body rt u-mobile-padding">
+                        <div class="Article-body-side">
+                            <div class="Article-writtenby">
+                                Published By
+                            </div>
+
+<div class="Article-author">
+    <div class="Article-author-photo">
+        <picture><img alt="" class="" src="https://static4.arrow.com/-/media/arrow/authors/nick-powers/0215-nick-powers.jpg?mw=99&amp;hash=5F6E6429BE01555D766A716D8E600063BED4EF72" /></picture>
+    </div>
+    <div class="Article-author-names">
+        <p class="Article-author-name" itemprop="author" itemscope itemtype="https://schema.org/Person">
+            <a href="/en/research-and-events/authors/nick-powers">
+                <span itemprop="name">Nick Powers</span>
+            </a>
+        </p>       
+            <p class="Article-author-company-name">Arrow Electronics</p>
+    </div>
+        <p class="Article-author-bio">
+            Nick Powers is an Application Marketing Manager for Arrow Electronics. With a Masters of Engineering focused on Systems Engineerin... <a class='Link' href='/en/research-and-events/authors/nick-powers#about'>Read more</a>
+        </p>
+</div>
+
+                        </div>
+                    <div class="Article-body-content  u-article-body">
+                        <p class="Article-body-firstp">
+                            Ok, so now you have a Raspberry Pi 3 and it&rsquo;s not the kind you eat.
+                        </p>
+
+                        <div>
+<p>You have been told there are an almost uncountable number of things you can do with it but you have to start somewhere, so how about we walk through a simple start up which can be thought of as the &ldquo;Hello World&rdquo; for the Raspberry Pi. in this article we will step through getting a basic operating system up and running to give a strong base on top of which we can build many more projects from old game arcades to whole house automation brains.</p>
+    <h4 class="ProductMerchandisingHead">See related product</h4>
+    <div class="ProductMerchandising">
+        <div class="ProductMerchandising-inner">
+                <a href="/en/products/sdsdqab-008g/sandisk" class="ProductMerchandising-imageLink">
+                    <img src="//download.siliconexpert.com/pdfs/2013/7/29/12/4/31/476/sndk_/manual/sdsdq-2048.jpg" alt="SDSDQAB-008G" class="ProductMerchandising-image">
+                </a>
+            <div class="ProductMerchandising-info">
+                <h4 class="ProductMerchandising-details-title">
+                    <a href="/en/products/sdsdqab-008g/sandisk">SDSDQAB-008G</a>
+                </h4>
+                <span class="ProductMerchandising-details-manufacturers js-ellipsis">
+                    SanDisk
+                </span>
+                
+                <span class="ProductMerchandising-details-category js-ellipsis">
+                Flash Cards
+                </span>
+                
+                <a href="/en/products/sdsdqab-008g/sandisk" class="Button ProductPricing-buyingOption Button--red">Buy</a>
+            </div>
+        </div>
+    </div>
+
+<p>Getting a small system setup use to be a hassle of incompatible drivers, version checking, and hardware variants. A lot of effort went into getting these systems up and running stably putting them more in the realm of hardcore engineering and not quite ready for tinkerers and makers creating things without a huge depth of knowledge in embedded systems. A lot has changed since that point and now devices like the Raspberry Pi 3 make getting up and running relatively painless.&nbsp;</p>
+    <h4 class="ProductMerchandisingHead">See related product</h4>
+    <div class="ProductMerchandising">
+        <div class="ProductMerchandising-inner">
+                <a href="/en/products/88768-9810/molex" class="ProductMerchandising-imageLink">
+                    <img src="//download.siliconexpert.com/pdfs/2013/12/15/8/29/32/685/mol_/manual/hdmi_to_hdmi_iso.jpg" alt="88768-9810" class="ProductMerchandising-image">
+                </a>
+            <div class="ProductMerchandising-info">
+                <h4 class="ProductMerchandising-details-title">
+                    <a href="/en/products/88768-9810/molex">88768-9810</a>
+                </h4>
+                <span class="ProductMerchandising-details-manufacturers js-ellipsis">
+                    Molex
+                </span>
+                
+                <span class="ProductMerchandising-details-category js-ellipsis">
+                Cable Assembly Other
+                </span>
+                
+                <a href="/en/products/88768-9810/molex" class="Button ProductPricing-buyingOption Button--red">Buy</a>
+            </div>
+        </div>
+    </div>
+
+<p>You have the basics of the Pi, micro SD card, power supply, keyboard, mouse, and HDMI cable ready to go now all you need is an operating system. The best place to start is with the pre-built NOOBS package from the Raspberry Pi Foundation. NOOBS stands for New Out Of the Box Software and helps you install a decent selection of operating systems onto the Raspberry Pi 3 as well as allowing for multi-boot if you want to experiment with multiple operating systems. The package is available in a lite and full version, the full version has Raspbian already packaged with it so you don&rsquo;t have to wait for it to download after you boot the Pi. I would recommend the full version for simplicity. If you are familiar with the ecosystem of Linux distributions Raspbian may look familiar as it is based the Debian distribution.</p>
+<p><picture><source media="(min-width: 1240px)" srcset="https://static4.arrow.com/-/media/images/research-and-events/articles/0816/noobsjpg.jpeg?mw=799&amp;hash=37917EB67ECD330850ED9ABDD634BD33CC3B13A5"></source>
+<source media="(min-width: 800px)" srcset="https://static4.arrow.com/-/media/images/research-and-events/articles/0816/noobsjpg.jpeg?mw=639&amp;hash=4F9263278120367F6E2D55B1C02E36190106DD93"></source>
+<img alt="" class="" src="https://static4.arrow.com/-/media/images/research-and-events/articles/0816/noobsjpg.jpeg?mw=639&amp;hash=4F9263278120367F6E2D55B1C02E36190106DD93"></picture><br>
+<br>
+You must download your preferred flavor of NOOBS from the official Raspberry Pi Foundation page <a href="https://www.raspberrypi.org/downloads/noobs/" target="_blank">here</a>.&nbsp;</p>
+
+<p>One recommended step after downloading NOOBS but before you load it onto your SD card is to completely format the SD card which will help eliminate partitions that may not be seen by Windows and could cause issues later when you get it going on the Pi. &nbsp;The SD Formatter from the SD Association helps with this problem and is pretty simple to use with one very large caveat: <strong>Select the right drive letter and make sure you selected the SD card</strong>. Again the right drive letter makes a huge difference as getting it wrong could cost you a lot of data and be a huge hassle. The SD Formatter is available <a href="https://www.sdcard.org/downloads/formatter_4/index.html " target="_blank">here</a>.</p>
+    <h4 class="ProductMerchandisingHead">See related product</h4>
+    <div class="ProductMerchandising">
+        <div class="ProductMerchandising-inner">
+            <div class="ProductMerchandising-info">
+                <h4 class="ProductMerchandising-details-title">
+                    <a href="/en/products/1995/adafruit-industries">1995</a>
+                </h4>
+                <span class="ProductMerchandising-details-manufacturers js-ellipsis">
+                    Adafruit Industries
+                </span>
+                
+                <span class="ProductMerchandising-details-category js-ellipsis">
+                External Plug-In Adapter
+                </span>
+                
+                <a href="/en/products/1995/adafruit-industries" class="Button ProductPricing-buyingOption Button--red">Buy</a>
+            </div>
+        </div>
+    </div>
+
+<p>Now you have all the pieces they just need to be mixed together. With the freshly formatted SD card inserted in your computer you can extract the entire contents of the NOOBS download directly onto it making sure not to have it end up in a random sub folder.</p>
+<p><picture><source media="(min-width: 800px)" srcset="https://static4.arrow.com/-/media/images/research-and-events/articles/0816/extractjpg.jpeg?mw=639&amp;hash=8ACEBEB0FA333A79E80D4EF720801CB10DF6F7D0"></source>
+<img alt="" class="" src="https://static4.arrow.com/-/media/images/research-and-events/articles/0816/extractjpg.jpeg?mw=639&amp;hash=8ACEBEB0FA333A79E80D4EF720801CB10DF6F7D0"></picture><br>
+<br>
+Insert that card now with a fresh NOOBS install into the Raspberry Pi 3 and connect up all the relevant cables. If you want to get up and running without a display, keyboard, and mouse we have another article which covers getting the Pi setup and online without inputs but it <a href="/en/research-and-events/articles/headless-setup-for-your-raspberry-pi-3">is a bit more involved</a>. Once powered on you will be presented with a selection screen for different operating systems. Since we are just getting started I would recommend the base Raspbian which comes on the full NOOBS download. Raspbian is probably the best supported operating system dedicated to the Raspberry Pi and gives you plenty of things to play around with before you take the deeper dive into alternate OSs. One thing to lookout for on the install is to make sure and set your keyboard layout and localization preferences as the Raspberry Pi defaults to UK settings. I had a hiccup typing in my WiFi password since the UK keyboard maps special characters differently from a US keyboard.&nbsp;</p>
+<p><picture><img alt="" class="" src="https://static4.arrow.com/-/media/images/research-and-events/articles/0816/selectionjpg.jpeg?mw=639&amp;hash=7572AA75F979E5D6ED47E0C00AE2E249099BA93A"></picture></p>
+<p>Now you have successfully baked a Raspberry Pi 3. Think of the Pi as a complete mini-computer with some additional inputs and outputs in the form of GPIOs that allow you to interface with many types of sensors, motors, lights, etc. Let your imagination run wild and create something cool and useful or completely useless but still really cool</p>                        </div>
+
+                        <div class="Article-share">
+
+                            <ul class="Share-links">
+                                <li><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://www.arrow.com/en/research-and-events/articles/setting-up-your-raspberry-pi-first-time" class="Share-link Icon Icon--facebook"
+                                       data-gtm-event="Click" data-gtm-action="Click" data-gtm-category="Social" data-gtm-label="Facebook - /en/research-and-events/articles/setting-up-your-raspberry-pi-first-time" ></a></li>
+                                <li><a target="_blank" href="https://twitter.com/intent/tweet?text=Raspberry Pi Quick Start Guide https://www.arrow.com/en/research-and-events/articles/setting-up-your-raspberry-pi-first-time" class="Share-link Icon Icon--twitter"
+                                       data-gtm-event="Click" data-gtm-action="Click" data-gtm-category="Social" data-gtm-label="Twitter - /en/research-and-events/articles/setting-up-your-raspberry-pi-first-time" ></a></li>
+                                <li><a target="_blank" href="https://plus.google.com/share?url=https://www.arrow.com/en/research-and-events/articles/setting-up-your-raspberry-pi-first-time" class="Share-link Icon Icon--google-plus"
+                                       data-gtm-event="Click" data-gtm-action="Click" data-gtm-category="Social" data-gtm-label="Google Plus - /en/research-and-events/articles/setting-up-your-raspberry-pi-first-time" ></a></li>
+                                <li><a target="_blank" href="https://www.linkedin.com/shareArticle?mini=true&url=https://www.arrow.com/en/research-and-events/articles/setting-up-your-raspberry-pi-first-time" class="Share-link Icon Icon--linkedin"
+                                       data-gtm-event="Click" data-gtm-action="Click" data-gtm-category="Social" data-gtm-label="LinkedIn - /en/research-and-events/articles/setting-up-your-raspberry-pi-first-time" ></a></li>
+                            </ul>
+
+                        </div>
+
+                            <h3 class="Article-tags-header">Article tags</h3>
+                            <div class="Article-tags">
+                                <ul class="Tags u-cf u-gutter-marginBottom">
+        <li class="Tags-item">
+            <a href="/en/tags/raspberry-pi-foundation/575ec14f6d6448009400255cae412ca2" class="Tags-item-link"
+                >
+                <div class="Tags-item-text">Raspberry Pi Foundation</div>
+            </a>
+        </li>
+</ul>
+
+                            </div>
+                    </div>
+
+                    
+
+
+    <!-- Related content Carousel ------------>
+    <section class="Article-related u-cf">
+        <h3>Related news articles</h3>
+        <section class="CarouselModule CarouselModule--news">
+                <article class="CarouselModule-slide">
+                    <figure class="CarouselModule-slide-image">
+                        <a href="/en/research-and-events/articles/top-ten-things-to-know-about-the-raspberry-pi-3" style="background-image: url('https://static4.arrow.com/-/media/images/research-and-events/articles/0816/header_img_v2.jpg?mw=249&hash=989258B43416967C6BFEA31BC62B09CABAD5B80B')"></a>
+                    </figure>
+
+                    <div class="CarouselModule-slide-Tags u-cf">
+                        <ul class="Tags u-cf u-gutter-marginBottom">
+        <li class="Tags-item">
+            <a href="/en/tags/raspberry-pi-foundation/575ec14f6d6448009400255cae412ca2" class="Tags-item-link"
+                >
+                <div class="Tags-item-text">Raspberry Pi Foundation</div>
+            </a>
+        </li>
+        <li class="Tags-item">
+            <a href="/en/tags/gift-guide-2016/3cf3e05d9622407a8b88b15bceaf3566" class="Tags-item-link"
+                >
+                <div class="Tags-item-text">Gift Guide 2016</div>
+            </a>
+        </li>
+</ul>
+
+                    </div>
+                    <div class="CarouselModule-description">
+                        <h3 class="CarouselModule-slide-heading">
+                            <a href="/en/research-and-events/articles/top-ten-things-to-know-about-the-raspberry-pi-3">
+                                Top Ten Things to Know About the Raspberry Pi 3
+                            </a>
+                        </h3>
+                        <div class="CarouselModule-slide-creation u-cf">One month ago</div>
+                    </div>
+                </article>
+                <article class="CarouselModule-slide">
+                    <figure class="CarouselModule-slide-image">
+                        <a href="/en/research-and-events/articles/scratch-with-your-pi" style="background-image: url('https://static4.arrow.com/-/media/images/research-and-events/articles/0816/0816-lights-main.jpg?mw=249&hash=56B0908A46FD2316D961BFD577AFF595EF3F6F68')"></a>
+                    </figure>
+
+                    <div class="CarouselModule-slide-Tags u-cf">
+                        <ul class="Tags u-cf u-gutter-marginBottom">
+        <li class="Tags-item">
+            <a href="/en/tags/raspberry-pi-foundation/575ec14f6d6448009400255cae412ca2" class="Tags-item-link"
+                >
+                <div class="Tags-item-text">Raspberry Pi Foundation</div>
+            </a>
+        </li>
+</ul>
+
+                    </div>
+                    <div class="CarouselModule-description">
+                        <h3 class="CarouselModule-slide-heading">
+                            <a href="/en/research-and-events/articles/scratch-with-your-pi">
+                                Raspberry Pi: First Steps in Programming with Scratch
+                            </a>
+                        </h3>
+                        <div class="CarouselModule-slide-creation u-cf">One month ago</div>
+                    </div>
+                </article>
+                <article class="CarouselModule-slide">
+                    <figure class="CarouselModule-slide-image">
+                        <a href="/en/research-and-events/articles/raspberry-pi-gpio" style="background-image: url('https://static4.arrow.com/-/media/images/research-and-events/articles/0816/0816-raspi-terms-main.jpg?mw=249&hash=3EED4A0FA8C981E4EA1CFA8D5080BBFF83847CCF')"></a>
+                    </figure>
+
+                    <div class="CarouselModule-slide-Tags u-cf">
+                        <ul class="Tags u-cf u-gutter-marginBottom">
+        <li class="Tags-item">
+            <a href="/en/tags/raspberry-pi-foundation/575ec14f6d6448009400255cae412ca2" class="Tags-item-link"
+                >
+                <div class="Tags-item-text">Raspberry Pi Foundation</div>
+            </a>
+        </li>
+</ul>
+
+                    </div>
+                    <div class="CarouselModule-description">
+                        <h3 class="CarouselModule-slide-heading">
+                            <a href="/en/research-and-events/articles/raspberry-pi-gpio">
+                                Access to GPIO with Python on Your Raspberry Pi 3
+                            </a>
+                        </h3>
+                        <div class="CarouselModule-slide-creation u-cf">One month ago</div>
+                    </div>
+                </article>
+                <article class="CarouselModule-slide">
+                    <figure class="CarouselModule-slide-image">
+                        <a href="/en/research-and-events/articles/pi-bandwidth-with-video" style="background-image: url('https://static4.arrow.com/-/media/images/research-and-events/articles/0816/0816-raspiessentials-main.jpg?mw=249&hash=0A24D24B1F5DCFBA348968E3874C86613399C548')"></a>
+                    </figure>
+
+                    <div class="CarouselModule-slide-Tags u-cf">
+                        <ul class="Tags u-cf u-gutter-marginBottom">
+        <li class="Tags-item">
+            <a href="/en/tags/raspberry-pi-foundation/575ec14f6d6448009400255cae412ca2" class="Tags-item-link"
+                >
+                <div class="Tags-item-text">Raspberry Pi Foundation</div>
+            </a>
+        </li>
+</ul>
+
+                    </div>
+                    <div class="CarouselModule-description">
+                        <h3 class="CarouselModule-slide-heading">
+                            <a href="/en/research-and-events/articles/pi-bandwidth-with-video">
+                                Raspberry Pi and Video Capture: A 1080p Conundrum
+                            </a>
+                        </h3>
+                        <div class="CarouselModule-slide-creation u-cf">One month ago</div>
+                    </div>
+                </article>
+                <article class="CarouselModule-slide">
+                    <figure class="CarouselModule-slide-image">
+                        <a href="/en/research-and-events/articles/raspberry-pi-promo-details" style="background-image: url('https://static4.arrow.com/-/media/images/research-and-events/articles/0816/0816-raspi-terms-main.jpg?mw=249&hash=3EED4A0FA8C981E4EA1CFA8D5080BBFF83847CCF')"></a>
+                    </figure>
+
+                    <div class="CarouselModule-slide-Tags u-cf">
+                        <ul class="Tags u-cf u-gutter-marginBottom">
+        <li class="Tags-item">
+            <a href="/en/tags/raspberry-pi-foundation/575ec14f6d6448009400255cae412ca2" class="Tags-item-link"
+                >
+                <div class="Tags-item-text">Raspberry Pi Foundation</div>
+            </a>
+        </li>
+</ul>
+
+                    </div>
+                    <div class="CarouselModule-description">
+                        <h3 class="CarouselModule-slide-heading">
+                            <a href="/en/research-and-events/articles/raspberry-pi-promo-details">
+                                Raspberry Pi 3 Giveaway Terms and Conditions
+                            </a>
+                        </h3>
+                        <div class="CarouselModule-slide-creation u-cf">2 months ago</div>
+                    </div>
+                </article>
+                <article class="CarouselModule-slide">
+                    <figure class="CarouselModule-slide-image">
+                        <a href="/en/research-and-events/articles/setting-up-your-raspberry-pi-first-time" style="background-image: url('https://static4.arrow.com/-/media/images/products/raspberry-pi-3-main.jpg?mw=249&hash=F6BF8FF1B272CE3D458115A8C390DACD80CBB507')"></a>
+                    </figure>
+
+                    <div class="CarouselModule-slide-Tags u-cf">
+                        <ul class="Tags u-cf u-gutter-marginBottom">
+        <li class="Tags-item">
+            <a href="/en/tags/raspberry-pi-foundation/575ec14f6d6448009400255cae412ca2" class="Tags-item-link"
+                >
+                <div class="Tags-item-text">Raspberry Pi Foundation</div>
+            </a>
+        </li>
+</ul>
+
+                    </div>
+                    <div class="CarouselModule-description">
+                        <h3 class="CarouselModule-slide-heading">
+                            <a href="/en/research-and-events/articles/setting-up-your-raspberry-pi-first-time">
+                                Raspberry Pi Quick Start Guide
+                            </a>
+                        </h3>
+                        <div class="CarouselModule-slide-creation u-cf">4 months ago</div>
+                    </div>
+                </article>
+                <article class="CarouselModule-slide">
+                    <figure class="CarouselModule-slide-image">
+                        <a href="/en/research-and-events/articles/power-of-the-pi" style="background-image: url('https://static4.arrow.com/-/media/images/research-and-events/articles/0816/0816-sensors-main.jpg?mw=249&hash=3B3DB5EAC1997272C174EE2BFBA6187BA5524446')"></a>
+                    </figure>
+
+                    <div class="CarouselModule-slide-Tags u-cf">
+                        <ul class="Tags u-cf u-gutter-marginBottom">
+        <li class="Tags-item">
+            <a href="/en/tags/raspberry-pi-foundation/575ec14f6d6448009400255cae412ca2" class="Tags-item-link"
+                >
+                <div class="Tags-item-text">Raspberry Pi Foundation</div>
+            </a>
+        </li>
+</ul>
+
+                    </div>
+                    <div class="CarouselModule-description">
+                        <h3 class="CarouselModule-slide-heading">
+                            <a href="/en/research-and-events/articles/power-of-the-pi">
+                                Power of the Pi
+                            </a>
+                        </h3>
+                        <div class="CarouselModule-slide-creation u-cf">4 months ago</div>
+                    </div>
+                </article>
+                <article class="CarouselModule-slide">
+                    <figure class="CarouselModule-slide-image">
+                        <a href="/en/research-and-events/articles/raspberry-pi-faq" style="background-image: url('https://static4.arrow.com/-/media/images/research-and-events/articles/0816/raspberrypifaq-main.jpg?mw=249&hash=40B73264A2F07DD7D5F9AB0ED3570A39666D3531')"></a>
+                    </figure>
+
+                    <div class="CarouselModule-slide-Tags u-cf">
+                        <ul class="Tags u-cf u-gutter-marginBottom">
+        <li class="Tags-item">
+            <a href="/en/tags/raspberry-pi-foundation/575ec14f6d6448009400255cae412ca2" class="Tags-item-link"
+                >
+                <div class="Tags-item-text">Raspberry Pi Foundation</div>
+            </a>
+        </li>
+</ul>
+
+                    </div>
+                    <div class="CarouselModule-description">
+                        <h3 class="CarouselModule-slide-heading">
+                            <a href="/en/research-and-events/articles/raspberry-pi-faq">
+                                Raspberry Pi 3 Giveaway FAQs
+                            </a>
+                        </h3>
+                        <div class="CarouselModule-slide-creation u-cf">4 months ago</div>
+                    </div>
+                </article>
+                <article class="CarouselModule-slide">
+                    <figure class="CarouselModule-slide-image">
+                        <a href="/en/research-and-events/articles/battery-power-your-pi" style="background-image: url('https://static4.arrow.com/-/media/images/research-and-events/articles/0616/0616-power-your-pi-main.jpg?mw=249&hash=B3EBC2086CC029B17DFB1D71616C3918109958C9')"></a>
+                    </figure>
+
+                    <div class="CarouselModule-slide-Tags u-cf">
+                        <ul class="Tags u-cf u-gutter-marginBottom">
+        <li class="Tags-item">
+            <a href="/en/tags/power-supplies/348ea452d9564849a2317d623dfdde4b" class="Tags-item-link"
+                >
+                <div class="Tags-item-text">Power Supplies</div>
+            </a>
+        </li>
+        <li class="Tags-item">
+            <a href="/en/tags/batteries/50eb7e12a3c7403095a662aad04b7035" class="Tags-item-link"
+                >
+                <div class="Tags-item-text">Batteries</div>
+            </a>
+        </li>
+</ul>
+
+                    </div>
+                    <div class="CarouselModule-description">
+                        <h3 class="CarouselModule-slide-heading">
+                            <a href="/en/research-and-events/articles/battery-power-your-pi">
+                                Battery Power Your Pi
+                            </a>
+                        </h3>
+                        <div class="CarouselModule-slide-creation u-cf">6 months ago</div>
+                    </div>
+                </article>
+        </section>
+    </section>
+    <!-- /Related content Carousel ------------>
+
+
+
+                </div>
+            </article>
+
+            <div class="u-grid-4 u-bg--grey">
+                
+
+
+<h2 class="LineHeader">
+Latest News</h2>
+
+        <div class="Masonry">
+            <div class="Masonry-grid u-cf" data-url="/contentgrid/loadpageajax" data-post-parameters="contentGridId=fc588916-b73c-4dcc-88ee-54a41165177b&amp;currentItemId=ffa10fc2-e8f6-42f7-9ce6-62c354e36719&amp;lang=en&amp;cur=USD">
+                <div class="Masonry-gridSizer"></div>
+
+
+
+
+
+
+<div class="Masonry-item Masonry-grid-x1 Masonry-grid-2x">
+<div class="InformationTile InformationTile--article InformationTile--article2x1 u-height u-gutter-marginBottom">
+
+<div class='js-responsive-bg-image--delayed js-responsive-bg-image InformationTile-bgImage' data-images='["https://static4.arrow.com/-/media/images/research-and-events/articles/1216/2016-mergers-acquisitions-hero.jpg?mw=649&hash=62D002B7133C4EF3F87373D90EC522C3341612BF"]' data-sizes='[0]'>
+</div>
+
+    <div class="InformationTile-details">
+
+        <div class="InformationTile-link">
+            <div class="InformationTile-link-inner">
+
+                <ul class="Tags u-cf u-gutter-marginBottom">
+        <li class="Tags-item">
+            <a href="/en/tags/electronics/c64b9034866d4569950e5bb46e1f2d9b" class="Tags-item-link"
+                >
+                <div class="Tags-item-text">Electronics</div>
+            </a>
+        </li>
+        <li class="Tags-item">
+            <a href="/en/tags/iot/5ca3857ffc004e478584c70f745bca18" class="Tags-item-link"
+                >
+                <div class="Tags-item-text">IoT</div>
+            </a>
+        </li>
+        <li class="Tags-item">
+            <a href="/en/tags/engineering/8e635b0bf6134f73a5292abdbc3d4c49" class="Tags-item-link"
+                >
+                <div class="Tags-item-text">Engineering</div>
+            </a>
+        </li>
+</ul>
+
+
+                <h3 class="InformationTile-details-title" title="2016 Chip Consolidation Focuses on Boosting IoT Presence">
+                    2016 Chip Consolidation Focuses on Boosting IoT Presence
+                </h3>
+
+                <p class="InformationTile-details-description">
+                    As we approach the new year and speculations fly for what to anticipate in the coming months, let’s take a moment to reflect on 2016 and the changes that have occurred throughout the semiconductor space.
+                </p>
+
+            </div>
+            <a class="InformationTile-psuedoLink" title="As we approach the new year and speculations fly for what to anticipate in the coming months, let’s take a moment to reflect on 2016 and the changes that have occurred throughout the semiconductor space." href="/en/research-and-events/articles/2016-chip-consolidation-focuses-on-boosting-iot-presence">
+            </a>
+        </div>
+
+    </div>
+
+
+    <div class="RoundCtas is-orange">
+        
+    <a class="Icon Icon--circle Icon--share" data-image="https://static4.arrow.com/-/media/images/research-and-events/articles/1216/2016-mergers-acquisitions-hero.jpg?mw=639&amp;hash=FE859336AE9185310CD6795F66CE792359B532E2" data-title="2016+Chip+Consolidation+Focuses+on+Boosting+IoT+Presence" href="/en/research-and-events/articles/2016-chip-consolidation-focuses-on-boosting-iot-presence"></a>
+    <span class="gtm-track Icon Icon--circle Icon--save saveTo" data-gtm-action="Save to Project" data-gtm-action-off="" data-gtm-category="Design Center" data-gtm-event="Click" data-gtm-label="NewsArticle - 7dcbbcfc-0c6a-4a7e-92c6-89c234a3e0e0" data-type="document" data-uri="arrow://news-article/7dcbbcfc-0c6a-4a7e-92c6-89c234a3e0e0" title="Save to projects"></span>
+
+
+    </div>
+
+
+    <footer class="InformationTile-footer">
+
+                <div class="InformationTile-creation">2 days ago</div>
+
+
+    </footer>
+
+</div></div>
+
+
+
+
+
+<div class="Masonry-item Masonry-grid-x1 Masonry-grid-2x">
+<div class="InformationTile InformationTile--article InformationTile--article2x1 u-height u-gutter-marginBottom">
+
+<div class='js-responsive-bg-image--delayed js-responsive-bg-image InformationTile-bgImage' data-images='["https://static4.arrow.com/-/media/images/research-and-events/articles/1216/1216-cable-cross-section.jpg?mw=649&hash=A47A45264935A1CF94C06BD33866986086179A9C"]' data-sizes='[0]'>
+</div>
+
+    <div class="InformationTile-details">
+
+        <div class="InformationTile-link">
+            <div class="InformationTile-link-inner">
+
+                <ul class="Tags u-cf u-gutter-marginBottom">
+        <li class="Tags-item">
+            <a href="/en/tags/wire-and-cable/1cff6e38670a4841a46083cb42e88447" class="Tags-item-link"
+                >
+                <div class="Tags-item-text">Wire and Cable</div>
+            </a>
+        </li>
+        <li class="Tags-item">
+            <a href="/en/tags/power-management/f33254f4d3574788a7be3ce5a5afffce" class="Tags-item-link"
+                >
+                <div class="Tags-item-text">Power Management</div>
+            </a>
+        </li>
+</ul>
+
+
+                <h3 class="InformationTile-details-title" title="The Skinny on the Skin Effect">
+                    The Skinny on the Skin Effect
+                </h3>
+
+                <p class="InformationTile-details-description">
+                    Why does apparent resistance of a conductor increase with frequency? 
+                </p>
+
+            </div>
+            <a class="InformationTile-psuedoLink" title="Why does apparent resistance of a conductor increase with frequency? " href="/en/research-and-events/articles/the-skinny-on-the-skin-effect">
+            </a>
+        </div>
+
+    </div>
+
+
+    <div class="RoundCtas is-orange">
+        
+    <a class="Icon Icon--circle Icon--share" data-image="https://static4.arrow.com/-/media/images/research-and-events/articles/1216/1216-cable-cross-section.jpg?mw=639&amp;hash=5EC7D46BD17E73D8C79B74EB29CBDE3E1161CD5B" data-title="The+Skinny+on+the+Skin+Effect" href="/en/research-and-events/articles/the-skinny-on-the-skin-effect"></a>
+    <span class="gtm-track Icon Icon--circle Icon--save saveTo" data-gtm-action="Save to Project" data-gtm-action-off="" data-gtm-category="Design Center" data-gtm-event="Click" data-gtm-label="NewsArticle - 53744634-2e7c-403f-9d36-8c179993e75d" data-type="document" data-uri="arrow://news-article/53744634-2e7c-403f-9d36-8c179993e75d" title="Save to projects"></span>
+
+
+    </div>
+
+
+    <footer class="InformationTile-footer">
+
+                <div class="InformationTile-creation">7 days ago</div>
+
+
+    </footer>
+
+</div></div>
+
+
+
+
+
+<div class="Masonry-item Masonry-grid-x1 Masonry-grid-2x">
+<div class="InformationTile InformationTile--article InformationTile--article2x1 u-height u-gutter-marginBottom">
+
+<div class='js-responsive-bg-image--delayed js-responsive-bg-image InformationTile-bgImage' data-images='["https://static4.arrow.com/-/media/images/research-and-events/articles/1216/1216-alexa-conexant-main.jpg?mw=649&hash=58FFB8B0EFAFBC679AC492321FC3AA19F72B98E6"]' data-sizes='[0]'>
+</div>
+
+    <div class="InformationTile-details">
+
+        <div class="InformationTile-link">
+            <div class="InformationTile-link-inner">
+
+                <ul class="Tags u-cf u-gutter-marginBottom">
+        <li class="Tags-item">
+            <a href="/en/tags/conexant-systems/41bf851e48534afcbab856b8c1a9f630" class="Tags-item-link"
+                >
+                <div class="Tags-item-text">Conexant Systems</div>
+            </a>
+        </li>
+        <li class="Tags-item">
+            <a href="/en/tags/make-with-arrow/9bbe6e1b92924a9dac43910010d5168e" class="Tags-item-link"
+                >
+                <div class="Tags-item-text">Make With Arrow</div>
+            </a>
+        </li>
+        <li class="Tags-item">
+            <a href="/en/tags/development-kits-and-tools/8e5ede7f47e944138c5f584166c49426" class="Tags-item-link"
+                >
+                <div class="Tags-item-text">Development Kits and Tools</div>
+            </a>
+        </li>
+</ul>
+
+
+                <h3 class="InformationTile-details-title" title="Arrow Brings the Power of Amazon Alexa to Engineers Everywhere">
+                    Arrow Brings the Power of Amazon Alexa to Engineers Everywhere
+                </h3>
+
+                <p class="InformationTile-details-description">
+                    The Alexa Voice Service (AVS) approved AudioSmart™ 2-mic Development Kit from Conexant gives engineers an affordable alternative to multi-mic array designs and expedites the development of 3rd Party Alexa smart home products.
+                </p>
+
+            </div>
+            <a class="InformationTile-psuedoLink" title="The Alexa Voice Service (AVS) approved AudioSmart™ 2-mic Development Kit from Conexant gives engineers an affordable alternative to multi-mic array designs and expedites the development of 3rd Party Alexa smart home products." href="/en/research-and-events/articles/arrow-brings-the-power-of-amazon-alexa-to-engineers-everywhere">
+            </a>
+        </div>
+
+    </div>
+
+
+    <div class="RoundCtas is-orange">
+        
+    <a class="Icon Icon--circle Icon--share" data-image="https://static4.arrow.com/-/media/images/research-and-events/articles/1216/1216-alexa-conexant-main.jpg?mw=639&amp;hash=0A0681240CAF9041E2C86D34CB56606609F6B460" data-title="Arrow+Brings+the+Power+of+Amazon+Alexa+to+Engineers+Everywhere" href="/en/research-and-events/articles/arrow-brings-the-power-of-amazon-alexa-to-engineers-everywhere"></a>
+    <span class="gtm-track Icon Icon--circle Icon--save saveTo" data-gtm-action="Save to Project" data-gtm-action-off="" data-gtm-category="Design Center" data-gtm-event="Click" data-gtm-label="NewsArticle - f30adc7e-2f21-43a8-b6f3-5901173054c0" data-type="document" data-uri="arrow://news-article/f30adc7e-2f21-43a8-b6f3-5901173054c0" title="Save to projects"></span>
+
+
+    </div>
+
+
+    <footer class="InformationTile-footer">
+
+                <div class="InformationTile-creation">7 days ago</div>
+
+
+    </footer>
+
+</div></div>
+            </div>
+
+            <div class="Masonry-emptyMessage">
+Sorry, your filter selection returned no results.            </div>
+
+            <button class="Button Button--loadMore is-hidden">Load more</button>
+
+        </div>
+
+
+
+            </div>
+        </div>
+    </div>
+
+        </div>
+
+        
+
+
+<footer class="Footer" data-gtm-tag="">
+    <div class="Footer-primary Accordion Accordion--mobile js-Accordion">
+        <div class="Content">
+            <div class="u-row">
+                <section class="Footer-about u-grid-4 u-cf Footer-borderTop Footer-paddingTop">
+                    <div class="Footer-about-content Accordion-block">
+
+                        <span class="Logo Logo--white Logo--medium Accordion-heading">
+                            <span class="Icon Icon--plus"></span>
+                            <span class="Icon Icon--minus"></span>
+                        </span>
+
+                        <div class="Accordion-body">
+                            <p class="Footer-about-intro">Arrow Electronics is a global provider of products, services, and solutions to industrial and commercial users of electronic components and enterprise computing solutions.</p>
+                            <p class="Footer-about-text">Arrow provides extraordinary value to customers by connecting customers to the right technology, at the right place, at the right time, and at the right price.</p>
+
+<a class="Footer-about-readMore Link Link--onDark u-textArrow" href="/en/about-arrow/overview">
+Learn More<span class="Icon--link-arrow"></span>
+</a>
+
+                        </div>
+
+                    </div>
+                </section>
+
+                <div class="u-grid-6">
+                    <section class="Footer-social u-grid-3 Footer-borderTop Footer-paddingTop">
+                        <div class="Footer-social-content">
+
+                            <div class="Footer-social-icons-wrapper">
+                                <span class="Footer-social-icons-title">Follow us</span>
+                                <ul class="Footer-social-icons">
+                                    <li>
+                                        <a target="_blank" href="https://twitter.com/Arrow_dot_com" class="Footer-social-icon Footer-social-icon-twitter Icon Icon--twitter"
+                                           data-gtm-event="Click" data-gtm-action="Click" data-gtm-category="Social" data-gtm-label="Twitter" ></a>
+                                    </li>
+                                    <li>
+                                        <a target="_blank" href="https://www.youtube.com/channel/UCPyQ-SpXmUVEyEzC_4s4pQA" class="Footer-social-icon Footer-social-icon-youtube Icon Icon--youtube"
+                                           data-gtm-event="Click" data-gtm-action="Click" data-gtm-category="Social" data-gtm-label="YouTube" ></a>
+                                    </li>
+                                    <li>
+                                        <a target="_blank" href="https://www.facebook.com/ArrowDotCom" class="Footer-social-icon Footer-social-icon-facebook Icon Icon--facebook"
+                                           data-gtm-event="Click" data-gtm-action="Click" data-gtm-category="Social" data-gtm-label="Facebook" ></a>
+                                    </li>
+                                    <li>
+                                        <a target="_blank" href="https://www.linkedin.com/company/arrow-electronics" class="Footer-social-icon Footer-social-icon-linkedin Icon Icon--linkedin"
+                                           data-gtm-event="Click" data-gtm-action="Click" data-gtm-category="Social" data-gtm-label="LinkedIn" ></a>
+                                    </li>
+                                    <li>
+                                        <a target="_blank" href="https://plus.google.com/+ArrowDotCom" class="Footer-social-icon Footer-social-icon-google-plus Icon Icon--google-plus"
+                                           data-gtm-event="Click" data-gtm-action="Click" data-gtm-category="Social" data-gtm-label="Google Plus" ></a>
+                                    </li>
+                                                                            <li>
+                                            <div id="GTSContainer" class="GoogleTrustedStore"></div>
+                                        </li>
+                                </ul>
+                            </div>
+
+                        </div>
+                    </section>
+                    
+<section class="Footer-contact u-grid-3 u-tablet-up-show">
+    <div id="footer-contact-tab" class="Footer-contact-tab-component">
+        <div class="Footer-contact-tabs">
+            <div class="Footer-contact-tab Footer-contact-newsletter-tab is-selected" data-panel="newsletter">Subscribe today</div>
+            <div class="Footer-contact-tab Footer-contact-chat-tab " data-panel="chat">Chat with us live</div>
+        </div>
+
+        <div class="Footer-contact-panels">
+            <div id="footer-tab-panel-newsletter" class="Footer-contact-panel Footer-newsletter is-selected">
+                <div class="Footer-newsletter-wrapper">
+    <div class="Footer-newsletter-description">
+        <div class="Footer-newsletter-description-icon Icon Icon--envelope"></div>
+        <span class="Footer-newsletter-description-title">Arrow Newsletters</span>
+        <p class="Footer-newsletter-description-text">To choose which arrow.com newsletter(s) you want to receive just hit the Subscribe button below.</p>
+    </div>
+</div>
+
+<a class="Button Button--bordered Button--inverted-colors is-verydarkgrey Footer-newsletter-anchor" data-gtm-action="Subscribe" data-gtm-category="Newsletter" data-gtm-event="Click" data-gtm-label="Footer" href="/en/newsletters">Subscribe</a>
+
+            </div>
+            <div id="footer-tab-panel-chat" class="Footer-contact-panel Footer-chat ">
+                    <div class="Footer-chat-phone">
+        <div class="Phone">
+            <span class="Phone-icon Icon Icon--phone"></span>
+            <span class="Phone-text">1-855-326-4757</span>
+        </div>
+    </div>
+
+    <div class="Footer-chat-intro">
+        <div class="Footer-chat-intro-wrapper">
+            <div class="Footer-chat-head">
+                <div class="Footer-chat-head-icon Icon Icon--chat Chat-icon"></div>
+                <div class="Footer-chat-head-text">Live support with an expert</div>
+            </div>
+
+            <p class="Footer-chat-description">
+                <p>Chat with a live Arrow customer service representative now.&nbsp;</p>
+            </p>
+        </div>
+    </div>
+
+    <div class="Footer-chat-button-wrapper">
+        <a class="Chat-button Button Button--green Button--full Footer-chat-button" data-gtm-action="Chat" data-gtm-action-off="" data-gtm-category="Support" data-gtm-event="Click" data-gtm-label="Footer" href="https://server.iad.liveperson.net/hc/18784960/?cmd=file&amp;file=visitorWantsToChat&amp;site=18784960&amp;byhref=1&amp;SV!skill=Arrow%20Support" target="_blank">Chat with us live</a>
+    </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+                </div>
+            </div>
+            <div class="u-row">
+                
+<section class="Footer-links Footer-borderTop u-grid-4">
+    <div class="Footer-links-content">
+        <ul class="Footer-links-list">
+                <li class="Footer-links-item">
+                    <a class="Link Link--onDark" href="/en/support/contact-support/contact-arrow">Contact and Support</a>
+                </li>
+                <li class="Footer-links-item">
+                    <a class="Link Link--onDark" href="/en/media-center">Media Center</a>
+                </li>
+                <li class="Footer-links-item">
+                    <a class="Link Link--onDark" href="/en/about-arrow">About Arrow</a>
+                </li>
+                <li class="Footer-links-item">
+                    <a class="Link Link--onDark" href="/en/arrow-services">Arrow Services</a>
+                </li>
+                <li class="Footer-links-item">
+                    <a class="Link Link--onDark" href="http://investor.arrow.com/phoenix.zhtml?c=85834&amp;p=irol-irhome" target="_blank">Investors</a>
+                </li>
+                <li class="Footer-links-item">
+                    <a class="Link Link--onDark" href="/en/careers">Careers</a>
+                </li>
+                <li class="Footer-links-item">
+                    <a class="Link Link--onDark" href="http://company.arrow.com/info/" target="_blank">Five Years Out</a>
+                </li>
+                <li class="Footer-links-item">
+                    <a class="Link Link--onDark" href="http://community.arrow.com/sam/" target="_blank">SAM Car</a>
+                </li>
+                <li class="Footer-links-item">
+                    <a class="Link Link--onDark" href="/en/design-center">Design Center</a>
+                </li>
+                <li class="Footer-links-item">
+                    <a class="Link Link--onDark" href="/en/products">Products</a>
+                </li>
+                <li class="Footer-links-item">
+                    <a class="Link Link--onDark" href="/en/datasheets">Datasheets</a>
+                </li>
+                <li class="Footer-links-item">
+                    <a class="Link Link--onDark" href="/en/reference-designs">Reference Designs</a>
+                </li>
+                <li class="Footer-links-item">
+                    <a class="Link Link--onDark" href="/en/research-and-events">Articles and Videos</a>
+                </li>
+                <li class="Footer-links-item">
+                    <a class="Link Link--onDark" href="/en/indiegogo">Indiegogo</a>
+                </li>
+        </ul>
+    </div>
+</section>
+
+
+                <section class="Footer-divisions u-grid-6 Footer-borderTop">
+    <div class="Footer-divisions-content Accordion-block">
+
+        <div class="Footer-divisions-logo Accordion-heading">
+            <strong class="Footer-divisions-logo-big">Arrow</strong>
+            <span class="Footer-divisions-logo-small">Divisions</span>
+            <span class="Icon Icon--plus"></span>
+            <span class="Icon Icon--minus"></span>
+        </div>
+        <div class="Footer-divisions-links Accordion-body">
+            <ul class="Footer-links-list">
+                    <li class="Footer-links-item">
+
+<a class="Link Link--onDark" href="/en/divisions/electronic-components">
+Electronic Components</a>
+                    </li>
+                    <li class="Footer-links-item">
+
+<a class="Link Link--onDark" href="/en/divisions/enterprise-computing-solutions">
+Enterprise Computing Solutions</a>
+                    </li>
+                    <li class="Footer-links-item">
+
+<a class="Link Link--onDark" href="/en/divisions/arrow-value-recovery">
+Arrow Value Recovery</a>
+                    </li>
+                    <li class="Footer-links-item">
+
+<a class="Link Link--onDark" href="/en/divisions/arrow-intelligent-systems">
+Arrow Intelligent Systems</a>
+                    </li>
+            </ul>
+        </div>
+
+    </div>
+</section>
+
+            </div>
+        </div>
+    </div>
+    <div class="Footer-secondary">
+        <div class="Content">
+    <span class="Footer-secondary-copyright">&#169; 2016 Arrow Electronics, Inc. All rights reserved
+ </span>
+    
+        <span class="u-pipe"></span><a class="Link" href="/en/legal/privacy-policy">Privacy Policy</a>        <span class="u-pipe"></span><a class="Link" href="/en/legal/terms-of-use">Terms and Conditions </a>        <span class="u-pipe"></span><a class="Link" href="/en/legal/cookie-policy">Cookie Policy</a>        <span class="u-pipe"></span><a class="Link" href="/en/product-category-sitemap">Categories</a>        <span class="u-pipe"></span><a class="Link" href="/en/legal/terms-and-conditions-of-sale#returns">Return Policy</a>        <span class="u-pipe"></span><a class="Link" href="/en/sitemap">Sitemap</a></div>
+
+    </div>
+</footer>
+
+
+        
+
+
+
+
+    </div>
+
+
+
+<script>
+    var Arrow = Arrow || {};
+    Arrow.buildVersion = 2016120811215;
+    Arrow.translationsCacheKey = "1559161045";
+    Arrow.configUrl = "/en/api/configs";
+    Arrow.translationsUrl = "/en/api/translations";
+    Arrow.globalisationUrl = "https://static4.arrow.com/static/globalisation/en.json";
+    Arrow.isAuthorized = false;
+    Arrow.currentUserId = "";
+    Arrow.currentUserDisplayName = "";
+    Arrow.updateYourBrowser = "Please update your browser to view.";
+    Arrow.updateYourBrowserExplanation = "Please update your browser to enjoy our site at its best!";
+    Arrow.fromUSDConversionRate = 1;
+    Arrow.requestId = "3109e0bd-8bb0-48c8-a185-50f4735682e6";
+    Arrow.cookiePolicyVersion = "acceptedCookiePolicy1";
+</script>
+    <!--[if gt IE 9]><!-->
+    <script src="https://static4.arrow.com/static/js/vendor___gqshlhhenaqrslxik17siw2_ord.js"></script>
+    <script src="https://static4.arrow.com/static/js/arrow___yumareu9mzq6eyrw6loqa2_ord.js"></script>
+
+
+
+    <script>Arrow.start();</script>
+    <script>window.jQueryArrow = jQuery.noConflict(); </script>
+    <!--<![endif]-->
+
+
+
+<script src="//media.richrelevance.com/rrserver/js/1.0/p13n.js"></script>
+<script charset="utf-8" type="text/javascript">
+    if (typeof RR !== 'undefined') {
+        RR.jsonCallback = function() {
+            if (typeof Arrow !== 'undefined' && typeof Arrow.mediator !== 'undefined') {
+                Arrow.mediator.trigger("RICHRELEVANCE:placementsReceived", RR.data.JSON.placements);
+            }
+        };
+    }
+
+    if (typeof r3_common === 'function') {
+        var R3_COMMON = new r3_common();
+        R3_COMMON.setApiKey('cba3598f6284d538');
+        R3_COMMON.setBaseUrl(window.location.protocol + '//recs.richrelevance.com/rrserver/');
+        R3_COMMON.setClickthruServer(window.location.protocol + "//" + window.location.host);
+        R3_COMMON.setSessionId('5zh2edzh0tykhcg4jcp5j0xr');
+        R3_COMMON.setUserId('');
+    }
+
+    if (typeof Arrow !== 'undefined' && typeof Arrow.mediator !== 'undefined') {
+        if(typeof window.rrComponents !== 'undefined') {
+            window.rrComponents.forEach(function(initFunction) {
+                Arrow.mediator.trigger("RICHRELEVANCE:addRrComponent", initFunction);
+            });
+            delete window.rrComponents;
+        }
+        Arrow.mediator.trigger("RICHRELEVANCE:initialise");
+    }
+
+</script>
+
+
+
+<!-- BEGIN: Google Trusted Stores -->
+<!--[if gt IE 9]><!-->
+<script type="text/javascript">
+  var gts = gts || [];
+
+  gts.push(["id", 649088]);
+  gts.push(["badge_position", "USER_DEFINED"]);
+  gts.push(["badge_container", "GTSContainer"]);
+  gts.push(["locale", "en-US"]);
+
+  (function() {
+    var gts = document.createElement("script");
+    gts.type = "text/javascript";
+    gts.async = true;
+    gts.src = "https://www.googlecommerce.com/trustedstores/api/js";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(gts, s);
+  })();
+</script>
+<!--<![endif]-->
+<!-- END: Google Trusted Stores --><input id="MediaFramework_ItemId" name="MediaFramework_ItemId" type="hidden" value="FFA10FC2E8F642F79CE662C354E36719">
+</body>
+
+<!--
+           _____  _____  _______          __
+     /\   |  _  ||  _  || _____ \        / /
+    /  \  | | | || | | || |  _ \ \  /\  / /
+   / /\ \ | | | || | | ||_| | | \ \/  \/ /
+  / /  \ \| | \ \| | \ \____| |  \  /\  /
+ /_/    \_\_|  \___|  \_______|   \/  \/
+
+ Arrow Electronics
+ ================= -->
+<!-- Source : Chicago02 -->
+
+</html>
+
